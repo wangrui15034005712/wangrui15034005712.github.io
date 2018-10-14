@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="去年夏天">
 <meta property="og:description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;} .card {width:130px;height:260px;overflow: hidden;} .ImageInCard {height:187px} //.ImageInCard img {height:100%;wid">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-14T06:26:21.936Z">
+<meta property="og:updated_time" content="2018-10-14T06:28:59.654Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="相册">
 <meta name="twitter:description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;} .card {width:130px;height:260px;overflow: hidden;} .ImageInCard {height:187px} //.ImageInCard img {height:100%;wid">
@@ -152,14 +152,20 @@ photo ={
         }
         li = "";
         for (var i = 0; i < data.length; i+=4) {
-            if(data[i]==null){
 
-            }
             li += '<div>';
-                li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i] + '"/></div>';
-                li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i+1] + '"/></div>';
-                li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i+2] + '"/></div>';
-                li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i+3] + '"/></div>';
+                if(data[i]==undefined){
+                    li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i] + '"/></div>';
+                }
+                if(data[i+1]==undefined){
+                    li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i+1] + '"/></div>';
+                }
+                if(data[i+2]==undefined){
+                    li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i+2] + '"/></div>';
+                }
+                if(data[i+3]==undefined){
+                    li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i+3] + '"/></div>';
+                }
             li += '</div>';
         }
         $("#imageDiv").append(li);
@@ -185,7 +191,7 @@ photo.init();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjn8hljsu00083wvbjb504qnn" class="article-share-link_test"></a>
+      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjn8hoq1l000aq4vblkz905ki" class="article-share-link_test"></a>
       
       
     </footer>
