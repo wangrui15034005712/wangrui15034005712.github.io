@@ -5,26 +5,17 @@
   
   <title>相册 | 去年夏天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;} .card {width:130px;heig">
+  <meta name="description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;} .card {width:130px;height:260px;overflow: hidden;} .ImageInCard {height:187px} //.ImageInCard img {height:100%;wid">
 <meta property="og:type" content="website">
 <meta property="og:title" content="相册">
 <meta property="og:url" content="http://www.lastsummer.top/photos/index.html">
 <meta property="og:site_name" content="去年夏天">
-<meta property="og:description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;} .card {width:130px;heig">
+<meta property="og:description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;} .card {width:130px;height:260px;overflow: hidden;} .ImageInCard {height:187px} //.ImageInCard img {height:100%;wid">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://www.lastsummer.top/photos/1.jpg">
-<meta property="og:image" content="http://www.lastsummer.top/photos/2.jpg">
-<meta property="og:image" content="http://www.lastsummer.top/photos/3.jpg">
-<meta property="og:image" content="http://www.lastsummer.top/photos/3.jpg">
-<meta property="og:image" content="http://www.lastsummer.top/photos/4.jpg">
-<meta property="og:image" content="http://www.lastsummer.top/photos/5.jpg">
-<meta property="og:image" content="http://www.lastsummer.top/photos/6.jpg">
-<meta property="og:image" content="http://www.lastsummer.top/photos/6.jpg">
-<meta property="og:updated_time" content="2018-10-14T05:52:26.062Z">
+<meta property="og:updated_time" content="2018-10-14T05:58:44.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="相册">
-<meta name="twitter:description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;} .card {width:130px;heig">
-<meta name="twitter:image" content="http://www.lastsummer.top/photos/1.jpg">
+<meta name="twitter:description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;} .card {width:130px;height:260px;overflow: hidden;} .ImageInCard {height:187px} //.ImageInCard img {height:100%;wid">
   
     <link rel="alternate" href="/atom.xml" title="去年夏天" type="application/atom+xml">
   
@@ -121,19 +112,8 @@
         <script src="https://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
 <script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.js"></script>
 <script src="https://unpkg.com/minigrid@3.1.1/dist/minigrid.min.js"></script>
-<div>
-    <div>
-        <div style="float:left;margin:7px;"><img src="/photos/1.jpg"></div>
-        <div style="float:left;margin:7px;"><img src="/photos/2.jpg"></div>
-        <div style="float:left;margin:7px;"><img src="/photos/3.jpg"></div>
-        <div style="float:left;margin:7px;"><img src="/photos/3.jpg"></div>
-    </div>
-    <div>
-        <div style="float:left;margin:7px;"><img src="/photos/4.jpg"></div>
-        <div style="float:left;margin:7px;"><img src="/photos/5.jpg"></div>
-        <div style="float:left;margin:7px;"><img src="/photos/6.jpg"></div>
-        <div style="float:left;margin:7px;"><img src="/photos/6.jpg"></div>
-    </div>
+<div id="imageDiv">
+
 </div>
 
 <style>
@@ -170,9 +150,16 @@ photo ={
                     '<div class="TextInCard">'+data[i].split('.')[0]+'</div>' +
                   '</div>' 
         }
-
-        $(".ImageGrid").append(li);
-        $(".ImageGrid").lazyload();
+        for (var i = begin; i < end && i < data.length; i=+4) {
+            li += '<div>' +
+                        '<div style='float:left;margin:7px;'><img src="/photos/' + data[i] + '"/></div>' +
+                        '<div style='float:left;margin:7px;'><img src="/photos/' + data[i+1] + '"/></div>' +
+                        '<div style='float:left;margin:7px;'><img src="/photos/' + data[i+2] + '"/></div>' +
+                        '<div style='float:left;margin:7px;'><img src="/photos/' + data[i+3] + '"/></div>' +
+                  '</div>';
+        }
+        $("#imageDiv").append(li);
+        $("#imageDiv").lazyload();
         this.minigrid();
     },
 
@@ -194,7 +181,7 @@ photo.init();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjn8gdsev00091kvb96i7ke46" class="article-share-link_test"></a>
+      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjn8glv3a000a48vb8la39sz9" class="article-share-link_test"></a>
       
       
     </footer>
