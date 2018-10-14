@@ -5,17 +5,17 @@
   
   <title>相册 | 去年夏天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="page: 1,             offset: 20,             init: function () {                 var that = this;                 $.getJSON(&quot;/photo/data.json&quot;, function (data) {">
+  <meta name="description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:160px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {height:100%;width: auto;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="相册">
 <meta property="og:url" content="http://www.lastsummer.top/photos/index.html">
 <meta property="og:site_name" content="去年夏天">
-<meta property="og:description" content="page: 1,             offset: 20,             init: function () {                 var that = this;                 $.getJSON(&quot;/photo/data.json&quot;, function (data) {">
+<meta property="og:description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:160px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {height:100%;width: auto;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-14T04:03:55.501Z">
+<meta property="og:updated_time" content="2018-10-14T04:09:46.191Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="page: 1,             offset: 20,             init: function () {                 var that = this;                 $.getJSON(&quot;/photo/data.json&quot;, function (data) {">
+<meta name="twitter:description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:160px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {height:100%;width: auto;">
   
     <link rel="alternate" href="/atom.xml" title="去年夏天" type="application/atom+xml">
   
@@ -109,53 +109,65 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><link type="text/css" href="/fancybox/jquery.fancybox.css" rel="stylesheet"><br>    <div class="instagram"><br>    <section class="archives album"><br>        <ul class="img-box-ul"></ul><br>    </section><br>    </div></p>
+        <script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.js"></script>
+<script src="https://unpkg.com/minigrid@3.1.1/dist/minigrid.min.js"></script>
+
+<p><div class="ImageGrid"></div></p>
+<p><style><br>.ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}<br>.card {width:160px;height:260px;overflow: hidden;}<br>.ImageInCard {height:185px}<br>.ImageInCard img {height:100%;width: auto;padding: 0 0 0 0; }<br>.TextInCard {height:75;background-color: #fff;}<br></style></p>
 <script>
-            page: 1,
-            offset: 20,
-            init: function () {
-                var that = this;
-                $.getJSON("/photo/data.json", function (data) {
-                    that.render(that.page, data);
-                    that.scroll(data);
-                });
-            },
+photo ={
+    page: 1,
+    offset: 20,
+    init: function () {
+        var that = this;
+        $.getJSON("/photo/output.json", function (data) {
+            that.render(that.page, data);
+            //that.scroll(data);
+        });
+    },
 
-            render: function (page, data) {
-                var begin = (page - 1) * this.offset;
-                var end = page * this.offset;
-                if (begin >= data.length) return;
-                var html, li = "";
-                for (var i = begin; i < end && i < data.length; i++) {
-                    li += '<li><div class="img-box">' +
-                        '<a class="img-bg" rel="example_group" href="https://github.com/lwzhang/blog/blob/master/photos/' + data[i] + '?raw=true"></a>' +
-                        '<img lazy-src="https://github.com/lwzhang/blog/blob/master/photos/' + data[i] + '?raw=true" />' +
-                        '</li>';
-                }
-                $(".img-box-ul").append(li);
-                $(".img-box-ul").lazyload();
-                $("a[rel=example_group]").fancybox();
-            },
+    render: function (page, data) {
+        var begin = (page - 1) * this.offset;
+        var end = page * this.offset;
+        if (begin >= data.length) return;
+        var html, li = "";
+        for (var i = begin; i < end && i < data.length; i++) {
 
-            scroll: function (data) {
-                var that = this;
-                $(window).scroll(function() {
-                    var windowPageYOffset = window.pageYOffset;
-                    var windowPageYOffsetAddHeight = windowPageYOffset + window.innerHeight;
-                    var sensitivity = 0;
+            li += '<div class="card">' +
+                    '<div class="ImageInCard">' + 
+                      '<a data-fancybox="gallery" href="/Images/' + data[i] + '">' +
+                        '<img src="/Images/' + data[i] + '"/>' +
+                      '</a>' +
+                    '</div>' +
+                    '<div class="TextInCard">'+data[i].split('.')[0]+'</div>' +
+                  '</div>' 
 
-                    var offsetTop = $(".instagram").offset().top + $(".instagram").height();
+        }
 
-                    if (offsetTop >= windowPageYOffset && offsetTop < windowPageYOffsetAddHeight + sensitivity) {
-                        that.render(++that.page, data);
-                    }
-                })
-            }
+        $(".ImageGrid").append(li);
+        $(".ImageGrid").lazyload();
+        this.minigrid();
+    },
+
+    minigrid: function() {
+        var grid = new Minigrid({
+            container: '.ImageGrid',
+            item: '.card',
+            gutter: 12
+        });
+        grid.mount();
+        $(window).resize(function() {
+           grid.mount();
+        });
+    }
+
+}
+photo.init();
 </script>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjn8cifb10008rovbpb82o4b7" class="article-share-link_test"></a>
+      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjn8cpq1v0007mgvbi1do8iyo" class="article-share-link_test"></a>
       
       
     </footer>
