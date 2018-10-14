@@ -5,17 +5,17 @@
   
   <title>相册 | 去年夏天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;/table&amp;gt;  .ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:160px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {hei">
+  <meta name="description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:160px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {height:100%;width: 33%;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="相册">
 <meta property="og:url" content="http://www.lastsummer.top/photos/index.html">
 <meta property="og:site_name" content="去年夏天">
-<meta property="og:description" content="&amp;lt;/table&amp;gt;  .ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:160px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {hei">
+<meta property="og:description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:160px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {height:100%;width: 33%;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-14T04:37:13.317Z">
+<meta property="og:updated_time" content="2018-10-14T04:38:39.887Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="&amp;lt;/table&amp;gt;  .ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:160px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {hei">
+<meta name="twitter:description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:160px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {height:100%;width: 33%;">
   
     <link rel="alternate" href="/atom.xml" title="去年夏天" type="application/atom+xml">
   
@@ -113,9 +113,7 @@
 <script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.js"></script>
 <script src="https://unpkg.com/minigrid@3.1.1/dist/minigrid.min.js"></script>
 
-<p><div class="ImageGrid"><br>    <table></table></div></p>
-<pre><code>&lt;/table&gt;
-</code></pre><p></p>
+<p><div class="ImageGrid"></div></p>
 <p><style><br>.ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}<br>.card {width:160px;height:260px;overflow: hidden;}<br>.ImageInCard {height:185px}<br>.ImageInCard img {height:100%;width: 33%;padding: 0 0 0 0; }<br>.TextInCard {height:75;background-color: #fff;}<br></style></p>
 <script>
 photo ={
@@ -134,19 +132,19 @@ photo ={
         var end = page * this.offset;
         if (begin >= data.length) return;
         var html, li = "";
-        li += ' <tr> ' +
         for (var i = begin; i < end && i < data.length; i++) {
-            li += '<td><div class="card">' +
+
+            li += '<div class="card">' +
                     '<div class="ImageInCard">' + 
                       '<a data-fancybox="gallery" href="/photos/' + data[i] + '">' +
                         '<img src="/photos/' + data[i] + '"/>' +
                       '</a>' +
                     '</div>' +
                     '<div class="TextInCard">'+data[i].split('.')[0]+'</div>' +
-                  '</div></td>' 
+                  '</div>' 
 
         }
-        li += ' </tr> ' +
+
         $(".ImageGrid").append(li);
         $(".ImageGrid").lazyload();
         this.minigrid();
@@ -170,7 +168,7 @@ photo.init();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjn8dp3pr0007dwvbexwyjqu2" class="article-share-link_test"></a>
+      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjn8dr87g000830vbwe2n4s1c" class="article-share-link_test"></a>
       
       
     </footer>
