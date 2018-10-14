@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="去年夏天">
 <meta property="og:description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:130px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {height:100%;width: 100%">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-14T05:18:35.696Z">
+<meta property="og:updated_time" content="2018-10-14T05:22:33.645Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="相册">
 <meta name="twitter:description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:130px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {height:100%;width: 100%">
@@ -132,17 +132,24 @@ photo ={
         var end = page * this.offset;
         if (begin >= data.length) return;
         var html, li = "";
-        for (var i = begin; i < end && i < data.length; i++) {
+        for (var i = begin; i < end && i < 1; i++) {
 
             li += '<div class="card">' +
                     '<div class="ImageInCard">' + 
                       '<a data-fancybox="gallery" href="/photos/' + data[i] + '">' +
-                        '<img src="/photos/' + data[i] + '"/>' +
+                        '<img src="/photos/' + data[1] + '"/><img src="/photos/' + data[2] + '"/><img src="/photos/' + data[3] + '"/>' +
                       '</a>' +
                     '</div>' +
                     '<div class="TextInCard">'+data[i].split('.')[0]+'</div>' +
                   '</div>' 
-
+            li += '<div class="card">' +
+                    '<div class="ImageInCard">' + 
+                      '<a data-fancybox="gallery" href="/photos/' + data[i] + '">' +
+                        '<img src="/photos/' + data[4] + '"/><img src="/photos/' + data[5] + '"/><img src="/photos/' + data[6] + '"/>' +
+                      '</a>' +
+                    '</div>' +
+                    '<div class="TextInCard">'+data[i].split('.')[0]+'</div>' +
+                  '</div>' 
         }
 
         $(".ImageGrid").append(li);
@@ -168,7 +175,7 @@ photo.init();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjn8f723m000au0vbbqmx0f6v" class="article-share-link_test"></a>
+      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjn8fbgwe000adcvb8efz0fy4" class="article-share-link_test"></a>
       
       
     </footer>
