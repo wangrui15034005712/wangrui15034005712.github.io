@@ -3,15 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>去年夏天</title>
+  <title>相册 | 去年夏天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="去年夏天">
-<meta property="og:url" content="http://www.lastsummer.top/index.html">
+  <meta name="description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:160px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {height:100%;width: 33%;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="相册">
+<meta property="og:url" content="http://www.lastsummer.top/photos/index.html">
 <meta property="og:site_name" content="去年夏天">
+<meta property="og:description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:160px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {height:100%;width: 33%;">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-14T05:11:59.335Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="去年夏天">
+<meta name="twitter:title" content="相册">
+<meta name="twitter:description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:160px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {height:100%;width: 33%;">
   
     <link rel="alternate" href="/atom.xml" title="去年夏天" type="application/atom+xml">
   
@@ -76,14 +80,12 @@
   </div>
 </div>
 
-        <section id="main">
-  
-    <article id="post-hello-world" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="page-" class="wow slideInRight article article-type-page" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/10/11/hello-world/" class="article-date">
-  <time class="post-time" datetime="2018-10-11T04:31:07.064Z" itemprop="datePublished">
+    <a href="/photos/index.html" class="article-date">
+  <time class="post-time" datetime="2018-10-12T08:20:43.000Z" itemprop="datePublished">
     <span class="post-month">10月</span><br/>
-    <span class="post-day">11</span>
+    <span class="post-day">12</span>
   </time>
 </a>
    
@@ -94,49 +96,85 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/11/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      相册
     </h1>
   
 
         <div>
           
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/心情/">心情</a>
-  </div>
-
-          
-              
-  &nbsp; | &nbsp;
-  <div class="view-box">
-    <span id="/2018/10/11/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
-      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
-    </span>
-  </div>
-
-
           
         </div>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br>
-        
-          <p class="article-more-link">
-            <a href="/2018/10/11/hello-world/#more">Read More</a>
-          </p>
-        
+        <script src="https://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+<script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.js"></script>
+<script src="https://unpkg.com/minigrid@3.1.1/dist/minigrid.min.js"></script>
+
+<p><div class="ImageGrid"></div></p>
+<p><style><br>.ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}<br>.card {width:160px;height:260px;overflow: hidden;}<br>.ImageInCard {height:185px}<br>.ImageInCard img {height:100%;width: 33%;padding: 0 0 0 0; }<br>.TextInCard {height:75;background-color: #fff;}<br></style></p>
+<script>
+photo ={
+    page: 1,
+    offset: 20,
+    init: function () {
+        var that = this;
+        $.getJSON("/photos/data.json", function (data) {
+            that.render(that.page, data);
+            //that.scroll(data);
+        });
+    },
+
+    render: function (page, data) {
+        var begin = (page - 1) * this.offset;
+        var end = page * this.offset;
+        if (begin >= data.length) return;
+        var html, li = "";
+        for (var i = begin; i < end && i < data.length; i++) {
+
+            li += '<div class="card">' +
+                    '<div class="ImageInCard">' + 
+                      '<a data-fancybox="gallery" href="/photos/' + data[i] + '">' +
+                        '<img src="/photos/' + data[i] + '"/>' +
+                      '</a>' +
+                    '</div>' +
+                    '<div class="TextInCard">'+data[i].split('.')[0]+'</div>' +
+                  '</div>' 
+
+        }
+
+        $(".ImageGrid").append(li);
+        $(".ImageGrid").lazyload();
+        this.minigrid();
+    },
+
+    minigrid: function() {
+        var grid = new Minigrid({
+            container: '.ImageGrid',
+            item: '.card',
+            gutter: 12
+        });
+        grid.mount();
+        $(window).resize(function() {
+           grid.mount();
+        });
+    }
+
+}
+photo.init();
+</script>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/2018/10/11/hello-world/" data-id="cjn8ez2jj0002vsvbi6ftlhmh" class="article-share-link_test"></a>
+      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjn8ez2jt000avsvbly13tlif" class="article-share-link_test"></a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Apache/">Apache</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jboss/">Jboss</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Journal/">Journal</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mood/">Mood</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/">Spring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringMvc/">SpringMvc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Struts2/">Struts2</a></li></ul>
-
     </footer>
   </div>
+  
+    
   
 </article>
 
@@ -145,8 +183,25 @@
 
 
 
-  
+  <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MDI3MC8xNjc5Nw==">
+<script type="text/javascript">
+var refer = "{Permalink}".replace("http://","");
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
 
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
 </section>
         
           <aside id="sidebar">
