@@ -200,7 +200,7 @@ photo.init();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjn9vmg4s000cm8vb28auxtip" class="article-share-link-test"></a>
+      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjn9wc5d4000twsvbhhx2zfuw" class="article-share-link-test"></a>
       
       
     </footer>
@@ -247,48 +247,20 @@ photo.init();
 
 
 
-  <section id="comments">
-<!--高速版，加载速度快，使用前需测试页面的兼容性-->
-<div id="SOHUCS" sid="相册"></div>
-<script>
-  (function(){
-    var appid = 'cytRJBBqd',
-    conf = '6c62cf127e7cfd66a7c253c93daeda6e';
-    var doc = document,
-    s = doc.createElement('script'),
-    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
-    s.type = 'text/javascript';
-    s.charset = 'utf-8';
-    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
-    h.insertBefore(s,h.firstChild);
-    window.SCS_NO_IFRAME = true;
-  })()
-</script>    
-  </section>
-  
 
 
 
 
-  <!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC80MDI3MC8xNjc5Nw==">
-<script type="text/javascript">
-var refer = "{Permalink}".replace("http://","");
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
+	<!--PC和WAP自适应版 sid="请将此处替换为配置SourceID的语句"-->
+<div id="SOHUCS"></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cytRJBBqd'; 
+var conf = '6c62cf127e7cfd66a7c253c93daeda6e'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
 
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-</script>
-<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
 </section>
         
           <aside id="sidebar">
