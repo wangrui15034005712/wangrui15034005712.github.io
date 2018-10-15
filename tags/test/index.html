@@ -3,19 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>相册 | 去年夏天</title>
+  <title>Tag: test | 去年夏天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;由于分辨率的不同可能造成展示效果的偏差，建议PC端访问！  .ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;} .card {width:130px;height:260px;overflow: hidden;} .ImageInCar">
-<meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="http://www.lastsummer.top/photos/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="去年夏天">
+<meta property="og:url" content="http://www.lastsummer.top/tags/test/index.html">
 <meta property="og:site_name" content="去年夏天">
-<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;由于分辨率的不同可能造成展示效果的偏差，建议PC端访问！  .ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;} .card {width:130px;height:260px;overflow: hidden;} .ImageInCar">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-14T08:45:51.835Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;由于分辨率的不同可能造成展示效果的偏差，建议PC端访问！  .ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;} .card {width:130px;height:260px;overflow: hidden;} .ImageInCar">
+<meta name="twitter:title" content="去年夏天">
   
     <link rel="alternate" href="/atom.xml" title="去年夏天" type="application/atom+xml">
   
@@ -80,194 +76,43 @@
   </div>
 </div>
 
-        <section id="main"><article id="page-" class="wow slideInRight article article-type-page" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/photos/index.html" class="article-date">
-  <time class="post-time" datetime="2018-10-12T08:20:43.000Z" itemprop="datePublished">
+        <section id="main">
+  
+  
+    
+    
+      
+      
+      <section class="archives-wrap animated rubberBand">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/10/11/hello-world/" class="archive-article-date">
+  <time class="post-time" datetime="2018-10-11T04:31:07.064Z" itemprop="datePublished">
     <span class="post-month">10月</span><br/>
-    <span class="post-day">12</span>
+    <span class="post-day">11</span>
   </time>
 </a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+      
   
-    <h1 class="article-title" itemprop="name">
-      相册
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/10/11/hello-world/">Hello World</a>
     </h1>
   
 
-        <div>
-          
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <script src="https://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
-<script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.js"></script>
-<script src="https://unpkg.com/minigrid@3.1.1/dist/minigrid.min.js"></script>
-<div>
-<div id="imageDiv"></div>
-</div>
-<h6>&nbsp;&nbsp;&nbsp;&nbsp;由于分辨率的不同可能造成展示效果的偏差，建议PC端访问！</h6>
-<style>
-.ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}
-.card {width:130px;height:260px;overflow: hidden;}
-.ImageInCard {height:187px}
-//.ImageInCard img {height:100%;width: 100%;padding: 0 0 0 0; }
-.TextInCard {height:75;background-color: #fff;}
-</style>
-<script>
-photo ={
-    page: 1,
-    offset: 20,
-    init: function () {
-        var that = this;
-        $.getJSON("/photos/data.json", function (data) {
-            that.render(that.page, data);
-            //that.scroll(data);
-        });
-    },
-
-    render: function (page, data) {
-        var begin = (page - 1) * this.offset;
-        var end = page * this.offset;
-        if (begin >= data.length) return;
-        var html, li = "";
-        for (var i = begin; i < end && i < data.length; i++) {
-            li += '<div class="card">' +
-                    '<div class="ImageInCard">' + 
-                      '<a data-fancybox="gallery" href="/photos/' + data[i] + '">' +
-                        '<img src="/photos/' + data[i] + '"/><img src="/photos/' + data[i] + '"/>' +
-                      '</a>' +
-                    '</div>' +
-                    '<div class="TextInCard">'+data[i].split('.')[0]+'</div>' +
-                  '</div>' 
-        }
-        li = "";
-        for (var i = 0; i < data.length; i+=4) {
-
-            li += '<div>';
-                if(data[i]!=undefined){
-                    li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i] + '"/></div>';
-                }else{
-                    li += '<div style="float:left;margin:7px;"><img></div>';
-                }
-                if(data[i+1]!=undefined){
-                    li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i+1] + '"/></div>';
-                }else{
-                    li += '<div style="float:left;margin:7px;"><img></div>';
-                }
-                if(data[i+2]!=undefined){
-                    li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i+2] + '"/></div>';
-                }else{
-                    li += '<div style="float:left;margin:7px;"><img></div>';
-                }
-                if(data[i+3]!=undefined){
-                    li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i+3] + '"/></div>';
-                }else{
-                    li += '<div style="float:left;margin:7px;"><img></div>';
-                }
-            li += '</div>';
-        }
-        $("#imageDiv").append(li);
-        //$("#msg").append('');
-        //$("#imageDiv").lazyload();
-        //this.minigrid();
-    },
-
-    minigrid: function() {
-        var grid = new Minigrid({
-            container: '.ImageGrid',
-            item: '.card',
-            gutter: 12
-        });
-        grid.mount();
-        $(window).resize(function() {
-           grid.mount();
-        });
-    }
-
-}
-photo.init();
-</script>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjn9kvks9000bt8vbds3hs1us" class="article-share-link-test"></a>
-      
-      
-    </footer>
-	
-	
-	  
-    <!--MOB SHARE BEGIN-->
-                                <div class="-mob-share-ui-button -mob-share-open">分享</div>
-                                <div class="-mob-share-ui" style="display: none">
-                                    <ul class="-mob-share-list">
-                                        <li class="-mob-share-weibo"><p>新浪微博</p></li>
-                                        <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
-                                        <li class="-mob-share-qzone"><p>QQ空间</p></li>
-                                        <li class="-mob-share-qq"><p>QQ好友</p></li>
-                                        <li class="-mob-share-weixin"><p>微信</p></li>
-                                        <li class="-mob-share-douban"><p>豆瓣</p></li>
-                                        <li class="-mob-share-renren"><p>人人网</p></li>
-                                        <li class="-mob-share-kaixin"><p>开心网</p></li>
-                                        <li class="-mob-share-facebook"><p>Facebook</p></li>
-                                        <li class="-mob-share-twitter"><p>Twitter</p></li>
-                                        <li class="-mob-share-pocket"><p>Pocket</p></li>
-                                        <li class="-mob-share-google"><p>Google+</p></li>
-                                        <li class="-mob-share-youdao"><p>有道云笔记</p></li>
-                                        <li class="-mob-share-mingdao"><p>明道</p></li>
-                                        <li class="-mob-share-pengyou"><p>朋友网</p></li>
-                                        <li class="-mob-share-tumblr"><p>Tumblr</p></li>
-                                        <li class="-mob-share-instapaper"><p>Instapaper</p></li>
-                                        <li class="-mob-share-linkedin"><p>LinkedIn</p></li>
-                                    </ul>
-                                    <div class="-mob-share-close">取消</div>
-                                </div>
-                                <div class="-mob-share-ui-bg"></div>
-                                <script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=283bca7b96411"></script>
-                                <!--MOB SHARE END-->
-
-	
-	
+    </header>
   </div>
-  
-    
-  
 </article>
+  
+  
+    </div></section>
+  
 
-
-
-
-
-
-  <!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC80MDI3MC8xNjc5Nw==">
-<script type="text/javascript">
-var refer = "{Permalink}".replace("http://","");
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-</script>
-<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
 </section>
         
           <aside id="sidebar">
