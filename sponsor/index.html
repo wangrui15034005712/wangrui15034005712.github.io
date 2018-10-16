@@ -118,7 +118,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/sponsor/index.html" data-id="cjnb1x2se00092gvb2nd8qo32" class="article-share-link-test"></a>
+      <a data-url="http://www.lastsummer.top/sponsor/index.html" data-id="cjnb25aws000dn0vbsn2ya5j8" class="article-share-link-test"></a>
       
       
     </footer>
@@ -144,14 +144,16 @@
 
 	<! -- 添加捐赠图标 -->
 <div class ="post-donate">
-    <div id="donate_board" class="donate_bar center">
-        <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏"></a>
-        <span class="donate_txt">
-           &uarr;<br>
-		   欣赏此文？求鼓励，求支持！
-        </span>
-        <br>
-     </div>  
+	<div id = "donateDiv">
+		<div id="donate_board" class="donate_bar center">
+			<a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏"></a>
+			<span class="donate_txt">
+			   &uarr;<br>
+			   欣赏此文？求鼓励，求支持！
+			</span>
+			<br>
+		 </div>  
+	<div>
 	<div id="donate_guide" class="donate_bar center hidden" >
 		<!-- 支付宝打赏图案 -->
 		<img src="/photos/donate/zhifubao.jpg" alt="支付宝打赏"> 
@@ -161,15 +163,15 @@
 </div>
 <! -- 添加捐赠图标 -->
 <script type="text/javascript">
-		document.getElementById('#donate_board').onclick = function(){
+		document.getElementById('#donateDiv').onclick = function(){
 			$('#donate_board').addClass('hidden');
 			$('#donate_guide').removeClass('hidden');
 		}
-		document.getElementById('#donate_board').onmouseover = function(){
+		document.getElementById('#donateDiv').onmouseover = function(){
 			$('#donate_board').addClass('hidden');
 			$('#donate_guide').removeClass('hidden');
 		}
-		document.getElementById('#donate_board').onmouseout = function(){
+		document.getElementById('#donateDiv').onmouseout = function(){
 			$('#donate_board').removeClass('hidden');
 			$('#donate_guide').addClass('hidden');
 		}
