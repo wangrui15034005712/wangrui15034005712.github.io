@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="去年夏天">
 <meta property="og:description" content="由于分辨率的不同可能造成展示效果的偏差，建议PC端访问！  .ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;} .card {width:130px;height:260px;overflow: hidden;} .ImageInCard {height:187px} //.Imag">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-16T08:30:11.594Z">
+<meta property="og:updated_time" content="2018-10-16T08:46:18.666Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="相册">
 <meta name="twitter:description" content="由于分辨率的不同可能造成展示效果的偏差，建议PC端访问！  .ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;} .card {width:130px;height:260px;overflow: hidden;} .ImageInCard {height:187px} //.Imag">
@@ -128,8 +128,10 @@
 .TextInCard {height:75;background-color: #fff;}
 div p{white-space:pre-wrap;width:500px;clear:both;}/*只对中文起作用，强制换行*/
 img{
-    width: 200px;
-    height: 160px;
+    height: 200px;
+    height: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 </style>
 <script>
@@ -149,7 +151,19 @@ photo ={
         var end = page * this.offset;
         if (begin >= data.length) return;
         var html, li = "";
-        for (var i = 0; i < data.length; i+=3) {
+        for (var i = begin; i < end && i < data.length; i++) {
+            li += '<div class="card">' +
+                    '<div class="ImageInCard">' + 
+                      '<a data-fancybox="gallery" href="/photos/' + data[i] + '">' +
+                        '<img src="/photos/' + data[i] + '"/><img src="/photos/' + data[i] + '"/>' +
+                      '</a>' +
+                    '</div>' +
+                    '<div class="TextInCard">'+data[i].split('.')[0]+'</div>' +
+                  '</div>' 
+        }
+        li = "";
+        for (var i = 0; i < data.length; i+=4) {
+
             li += '<div>';
                 if(data[i]!=undefined){
                     li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i] + '"/></div>';
@@ -163,6 +177,11 @@ photo ={
                 }
                 if(data[i+2]!=undefined){
                     li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i+2] + '"/></div>';
+                }else{
+                    li += '<div style="float:left;margin:7px;"><img></div>';
+                }
+                if(data[i+3]!=undefined){
+                    li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i+3] + '"/></div>';
                 }else{
                     li += '<div style="float:left;margin:7px;"><img></div>';
                 }
@@ -192,7 +211,7 @@ photo.init();
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjnbgwkto000tswvbb1z5sjiq" class="article-share-link-test"></a>
+      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjnbhho7s00099wvbflnuna0h" class="article-share-link-test"></a>
       
       
     </footer>
