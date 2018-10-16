@@ -5,17 +5,17 @@
   
   <title>相册 | 去年夏天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="//   .ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:160px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {height:100%;width: au">
+  <meta name="description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:160px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {height:100%;width: auto;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="相册">
 <meta property="og:url" content="http://www.lastsummer.top/photos/index.html">
 <meta property="og:site_name" content="去年夏天">
-<meta property="og:description" content="//   .ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:160px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {height:100%;width: au">
+<meta property="og:description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:160px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {height:100%;width: auto;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-16T09:04:57.827Z">
+<meta property="og:updated_time" content="2018-10-16T09:14:08.279Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="//   .ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:160px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {height:100%;width: au">
+<meta name="twitter:description" content=".ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}.card {width:160px;height:260px;overflow: hidden;}.ImageInCard {height:185px}.ImageInCard img {height:100%;width: auto;">
   
     <link rel="alternate" href="/atom.xml" title="去年夏天" type="application/atom+xml">
   
@@ -115,12 +115,15 @@
       
         <script src="https://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
 <script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.js"></script>
-//<script src="https://unpkg.com/minigrid@3.1.1/dist/minigrid.min.js"></script>
 
 <p><div class="ImageGrid"></div></p>
 <p><style><br>.ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}<br>.card {width:160px;height:260px;overflow: hidden;}<br>.ImageInCard {height:185px}<br>.ImageInCard img {height:100%;width: auto;padding: 0 0 0 0; }<br>.TextInCard {height:75;background-color: #fff;}<br></style></p>
 <script>
-    photo ={
+
+/* @license Minigrid v3.1.1 – minimal cascading grid layout http://alves.im/minigrid */
+!function(t,e){"function"==typeof define&&define.amd?define(e):"object"==typeof exports?module.exports=e():t.Minigrid=e()}(this,function(t){"use strict";function e(t,e){for(var i in e)e.hasOwnProperty(i)&&(t[i]=e[i]);return t}var i=function(t){var i=t.container instanceof Node?t.container:document.querySelector(t.container),r=t.item instanceof NodeList?t.item:i.querySelectorAll(t.item);this.props=e(t,{container:i,nodeList:r})};return i.prototype.mount=function(){if(!this.props.container)return!1;if(!this.props.nodeList||0===this.props.nodeList.length)return!1;var t="number"==typeof this.props.gutter&&isFinite(this.props.gutter)&&Math.floor(this.props.gutter)===this.props.gutter?this.props.gutter:0,e=this.props.done,i=this.props.container,r=this.props.nodeList;i.style.width="";var n=Array.prototype.forEach,o=i.getBoundingClientRect().width,s=r[0].getBoundingClientRect().width+t,p=Math.max(Math.floor((o-t)/s),1),a=0;o=s*p+t+"px",i.style.width=o,i.style.position="relative";for(var c=[],u=[],l=0;l<p;++l)u.push(l*s+t),c.push(t);this.props.rtl&&u.reverse(),n.call(r,function(e){var i=c.slice(0).sort(function(t,e){return t-e}).shift();i=c.indexOf(i);var r=parseInt(u[i]),n=parseInt(c[i]);e.style.position="absolute",e.style.webkitBackfaceVisibility=e.style.backfaceVisibility="hidden",e.style.transformStyle="preserve-3d",e.style.transform="translate3D("+r+"px,"+n+"px, 0)",c[i]+=e.getBoundingClientRect().height+t,a+=1}),i.style.display="";var f=c.slice(0).sort(function(t,e){return t-e}).pop();i.style.height=f+"px","function"==typeof e&&e(r)},i});
+
+photo ={
     page: 1,
     offset: 20,
     init: function () {
@@ -151,7 +154,7 @@
 
         $(".ImageGrid").append(li);
         $(".ImageGrid").lazyload();
-        //this.minigrid();
+        this.minigrid();
     },
 
     minigrid: function() {
@@ -171,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjnbi512z000t0svbdowacbvf" class="article-share-link-test"></a>
+      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjnbigyi2000tq8vbuw0n4v6x" class="article-share-link-test"></a>
       
       
     </footer>
