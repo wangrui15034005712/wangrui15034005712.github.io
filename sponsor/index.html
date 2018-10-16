@@ -118,7 +118,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/sponsor/index.html" data-id="cjnb9ay0y000tokvbhvr1rg8r" class="article-share-link-test"></a>
+      <a data-url="http://www.lastsummer.top/sponsor/index.html" data-id="cjnb9chrc000tugvbo5fjnhef" class="article-share-link-test"></a>
       
       
     </footer>
@@ -139,9 +139,9 @@
 		</div>
 		<div id="donate_guide" class="donate_bar hidden" >
 			<!-- 支付宝打赏图案 -->
-			<img src="/photos/zhifubao.jpg" alt="支付宝打赏" style='margin-right:10px;'> 
+			<img src="/photos/zhifubao.jpg" alt="支付宝打赏"> 
 			<!-- 微信打赏图案 -->
-			<img src="/photos/weixin.png" alt="微信打赏" style='margin-left:10px;'>  
+			<img src="/photos/weixin.png" alt="微信打赏">  
 		</div>
 	 </div>
 <! -- 添加捐赠图标 -->
@@ -149,6 +149,10 @@
 	document.getElementById('btn_donate').onclick = function(){
 		$('#donate_board').addClass('hidden');
 		$('#donate_guide').removeClass('hidden');
+	}
+	document.getElementById('donate_guide').onclick = function(){
+		$('#donate_guide').addClass('hidden');
+		$('#donate_board').removeClass('hidden');
 	}
 </script>
 <style>
