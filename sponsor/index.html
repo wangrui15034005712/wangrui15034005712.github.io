@@ -118,7 +118,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/sponsor/index.html" data-id="cjnb2eo2n000vp0vb9x7wgbm6" class="article-share-link-test"></a>
+      <a data-url="http://www.lastsummer.top/sponsor/index.html" data-id="cjnb2hujn000ewsvb057g2ibx" class="article-share-link-test"></a>
       
       
     </footer>
@@ -164,11 +164,16 @@
 <! -- 添加捐赠图标 -->
 <script type="text/javascript">
 
-		function hhhhh(){
+	window.onload=function(){
+		document.getElementById('#donateDiv').onmouseover = function(){
 			$('#donate_board').addClass('hidden');
 			$('#donate_guide').removeClass('hidden');
 		}
-		
+		document.getElementById('#donateDiv').onmouseout = function(){
+			$('#donate_board').removeClass('hidden');
+			$('#donate_guide').addClass('hidden');
+		}
+	}
 </script>
 <style>
 .donate_bar {
