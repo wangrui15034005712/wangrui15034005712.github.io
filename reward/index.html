@@ -62,7 +62,6 @@ function init() {
 // Set up each of the photos on the table
 
 function initPhotos() {
-
   // (Ensure this function doesn't run twice)
   if ( loaded ) return;
   loaded = true;
@@ -122,10 +121,16 @@ function initPhotos() {
 
 }
 
+$(function(){
+
+});
+
 </script>
 
 <p></p></head><p></p>
 <body>
+
+<select id="选择" name="选择"><br>  <option value="mingxing">明星</option><br>  <option value="wangdan">王丹</option><br>  <option value="opel">Opel</option><br>  <option value="audi">Audi</option><br></select>
 
   <div id="wooden-table"><img src="/reward/images/wooden-table.jpg" alt="Wooden table image"></div>
 
