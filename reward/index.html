@@ -128,15 +128,26 @@ $(function(){
         $("#wangdan");
         debugger
         var name = $("select").val();
-        if(name == "wangdan"){
-            $("#wangdan").show();
+        if(name == "wangdan1"){
+            $("#wangdan1").show();
             $("#mingxing").hide();
+            $("#wangdan2").hide();
+            $("#wangdan3").hide();
         }else if(name == "mingxing"){
+            $("#wangdan1").hide();
             $("#mingxing").show();
-            $("#wangdan").hide();
-        }else{
-            $("#mingxing").show();
-            $("#wangdan").show();
+            $("#wangdan2").hide();
+            $("#wangdan3").hide();
+        }else if(name == "wangdan2"){
+            $("#wangdan1").hide();
+            $("#mingxing").hide();
+            $("#wangdan2").show();
+            $("#wangdan3").hide();
+        }else if(name == "wangdan3"){
+            $("#wangdan1").hide();
+            $("#mingxing").hide();
+            $("#wangdan2").hide();
+            $("#wangdan3").show();
         }
     });
 });
@@ -146,10 +157,10 @@ $(function(){
 <p></p></head><p></p>
 <body>
 
-<select id="选择" name="选择"><br>  <option value="mingxing">明星</option><br>  <option value="wangdan">王丹</option><br>  <option value="opel">Opel</option><br>  <option value="audi">Audi</option><br></select>
+<select id="选择" name="选择"><br>  <option value="mingxing">明星</option><br>  <option value="wangdan1">王丹</option><br>  <option value="wangdan2">王丹</option><br>  <option value="wangdan3">王丹</option><br></select>
 
   <div id="wooden-table"><img src="/reward/images/wooden-table.jpg" alt="Wooden table image"></div>
 
-  <div id="lighttable"><br>    <div id="mingxing"><br>    <img src="/reward/images/MM1.jpg" alt="MM1"><br>    <img src="/reward/images/MM2.jpg" alt="MM2"><br>    <img src="/reward/images/MM3.jpg" alt="MM3"><br>    <img src="/reward/images/MM4.jpg" alt="MM4"><br>    <img src="/reward/images/MM5.jpg" alt="MM5"><br>    <img src="/reward/images/MM6.jpg" alt="MM6"><br>    <img src="/reward/images/MM7.jpg" alt="MM7"><br>    <img src="/reward/images/MM8.jpg" alt="MM8"><br>    <img src="/reward/images/MM9.jpg" alt="MM9"><br>    <img src="/reward/images/MM10.jpg" alt="MM10"><br>    </div><br>    <div id="wangdan"><br>    <img src="/reward/images/pic1.jpg" alt="MM1"><br>    <img src="/reward/images/pic2.jpg" alt="MM2"><br>    <img src="/reward/images/pic3.jpg" alt="MM3"><br>    <img src="/reward/images/pic4.jpg" alt="MM4"><br>    <img src="/reward/images/pic5.jpg" alt="MM5"><br>    <img src="/reward/images/pic6.jpg" alt="MM6"><br>    <img src="/reward/images/pic7.jpg" alt="MM7"><br>    <img src="/reward/images/pic8.jpg" alt="MM8"><br>    <img src="/reward/images/pic9.jpg" alt="MM9"><br>    <img src="/reward/images/pic10.jpg" alt="MM10"><br>    <img src="/reward/images/pic11.jpg" alt="MM10"><br>    <img src="/reward/images/pic12.jpg" alt="MM10"><br>    <img src="/reward/images/pic13.jpg" alt="MM10"><br>    <img src="/reward/images/pic14.jpg" alt="MM10"><br>    <img src="/reward/images/pic15.jpg" alt="MM10"><br>    <img src="/reward/images/pic16.jpg" alt="MM10"><br>    <img src="/reward/images/pic17.jpg" alt="MM10"><br>    <img src="/reward/images/pic18.jpg" alt="MM10"><br>    <img src="/reward/images/pic19.jpg" alt="MM10"><br>    <img src="/reward/images/pic20.jpg" alt="MM10"><br>    <img src="/reward/images/pic21.jpg" alt="MM10"><br>    <img src="/reward/images/pic22.jpg" alt="MM10"><br>    <img src="/reward/images/pic23.jpg" alt="MM10"><br>    <img src="/reward/images/pic24.jpg" alt="MM10"><br>    <img src="/reward/images/pic25.jpg" alt="MM10"><br>    <img src="/reward/images/pic26.jpg" alt="MM10"><br>    </div><br>  </div>
+  <div id="lighttable"><br>    <div id="mingxing"><br>    <img src="/reward/images/MM1.jpg" alt="MM1"><br>    <img src="/reward/images/MM2.jpg" alt="MM2"><br>    <img src="/reward/images/MM3.jpg" alt="MM3"><br>    <img src="/reward/images/MM4.jpg" alt="MM4"><br>    <img src="/reward/images/MM5.jpg" alt="MM5"><br>    <img src="/reward/images/MM6.jpg" alt="MM6"><br>    <img src="/reward/images/MM7.jpg" alt="MM7"><br>    <img src="/reward/images/MM8.jpg" alt="MM8"><br>    <img src="/reward/images/MM9.jpg" alt="MM9"><br>    <img src="/reward/images/MM10.jpg" alt="MM10"><br>    </div><br>    <div id="wangdan1"><br>        <img src="/reward/images/pic1.jpg" alt="MM1"><br>        <img src="/reward/images/pic2.jpg" alt="MM2"><br>        <img src="/reward/images/pic3.jpg" alt="MM3"><br>        <img src="/reward/images/pic4.jpg" alt="MM4"><br>        <img src="/reward/images/pic5.jpg" alt="MM5"><br>        <img src="/reward/images/pic6.jpg" alt="MM6"><br>        <img src="/reward/images/pic7.jpg" alt="MM7"><br>        <img src="/reward/images/pic8.jpg" alt="MM8"><br>    </div><br>    <div id="wangdan2"><br>        <img src="/reward/images/pic9.jpg" alt="MM9"><br>        <img src="/reward/images/pic10.jpg" alt="MM10"><br>        <img src="/reward/images/pic11.jpg" alt="MM10"><br>        <img src="/reward/images/pic12.jpg" alt="MM10"><br>        <img src="/reward/images/pic13.jpg" alt="MM10"><br>        <img src="/reward/images/pic14.jpg" alt="MM10"><br>        <img src="/reward/images/pic15.jpg" alt="MM10"><br>        <img src="/reward/images/pic16.jpg" alt="MM10"><br>        <img src="/reward/images/pic17.jpg" alt="MM10"><br>    </div><br>    <div id="wangdan3"><br>        <img src="/reward/images/pic18.jpg" alt="MM10"><br>        <img src="/reward/images/pic19.jpg" alt="MM10"><br>        <img src="/reward/images/pic20.jpg" alt="MM10"><br>        <img src="/reward/images/pic21.jpg" alt="MM10"><br>        <img src="/reward/images/pic22.jpg" alt="MM10"><br>        <img src="/reward/images/pic23.jpg" alt="MM10"><br>        <img src="/reward/images/pic24.jpg" alt="MM10"><br>        <img src="/reward/images/pic25.jpg" alt="MM10"><br>        <img src="/reward/images/pic26.jpg" alt="MM10"><br>    </div><br>  </div>
 
 <p></p></body><br><p></p>
