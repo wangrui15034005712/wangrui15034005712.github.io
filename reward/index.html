@@ -127,6 +127,17 @@ $(function(){
         $("#mingxing");
         $("#wangdan");
         debugger
+        var name = $("select").val();
+        if(name == "wangdan"){
+            $("#wangdan").show();
+            $("#mingxing").hide();
+        }else if(name == "mingxing"){
+            $("#mingxing").show();
+            $("#wangdan").hide();
+        }else{
+            $("#mingxing").show();
+            $("#wangdan").show();
+        }
     });
 });
 
