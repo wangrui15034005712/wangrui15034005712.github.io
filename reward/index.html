@@ -1,0 +1,134 @@
+<head>
+
+<style type="text/css">
+
+/* The page body */
+html, body {
+  background: #333;
+  overflow: hidden;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* The div holding the wooden table img tag */
+#wooden-table {
+  position: absolute;
+  left: -5000px;
+}
+
+/* The light table itself */
+#lighttable {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background: #eee url(/images/wooden-table.jpg);
+  padding: 70px;
+  margin: 0 auto;
+  border: 20px solid #111;
+  display: none;
+}
+
+/* Photos on the light table */
+#lighttable img {
+  border: 10px solid #fff;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: 0 0 1em rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.9);
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+</style>
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.8.2.custom.min.js"></script>
+
+<script type="text/javascript">
+
+var newImageZIndex = 1;  // To make sure newly-loaded images land on top of images on the table
+var loaded = false;      // Used to prevent initPhotos() running twice
+
+// When the document is ready, fire up the table!
+$( init );
+
+// When the wooden table image has loaded, start bringing in the photos
+function init() {
+  var woodenTable = $('#wooden-table img');
+  woodenTable.load( initPhotos );
+
+  // Hack for browsers that don't fire load events for cached images
+  if ( woodenTable.get(0).complete ) $(woodenTable).trigger("load");
+}
+
+// Set up each of the photos on the table
+
+function initPhotos() {
+
+  // (Ensure this function doesn't run twice)
+  if ( loaded ) return;
+  loaded = true;
+
+  // The table image has loaded, so bring in the table
+  $('#lighttable').fadeIn('fast');
+
+  // Process each photo in turn...
+  $('#lighttable img').each( function(index) {
+
+    // Set a random position and angle for this photo
+    var left = Math.floor( Math.random() * 1000);
+    var top = Math.floor( Math.random() * 300);
+    var angle = Math.floor( Math.random() * 60 - 30 );
+    $(this).css( 'left', left+'px' );
+    $(this).css( 'top', top+'px' );
+    $(this).css( 'transform', 'rotate(' + angle + 'deg)' );   
+    $(this).css( '-moz-transform', 'rotate(' + angle + 'deg)' );   
+    $(this).css( '-webkit-transform', 'rotate(' + angle + 'deg)' );
+    $(this).css( '-o-transform', 'rotate(' + angle + 'deg)' );
+
+    // Make the photo draggable
+    $(this).draggable( { containment: 'parent', stack: '#lighttable img', cursor: 'pointer' } );
+
+    // Hide the photo for now, in case it hasn't finished loading
+    $(this).hide();
+
+    // When the photo image has loaded...
+    $(this).load( function() {
+
+      // (Ensure this function doesn't run twice)
+      if ( $(this).data('loaded') ) return;
+      $(this).data('loaded', true);
+
+      // Record the photo's true dimensions
+      var imgWidth = $(this).width();
+      var imgHeight = $(this).height();
+
+      // Make the photo bigger, so it looks like it's high above the table
+      $(this).css( 'width', imgWidth * 1.5 );
+      $(this).css( 'height', imgHeight * 1.5 );
+
+      // Make it completely transparent, ready for fading in
+      $(this).css( 'opacity', 0 );
+
+      // Make sure its z-index is higher than the photos already on the table
+      $(this).css( 'z-index', newImageZIndex++ );
+
+      // Gradually reduce the photo's dimensions to normal, fading it in as we go
+      $(this).animate( { width: imgWidth, height: imgHeight, opacity: .95 }, 1200 );
+    } );
+
+    // Hack for browsers that don't fire load events for cached images
+    if ( this.complete ) $(this).trigger("load");
+
+  });
+
+}
+
+</script>
+
+<p></p></head><p></p>
+<body>
+
+  <div id="wooden-table"><img src="/reward/images/wooden-table.jpg" alt="Wooden table image"></div>
+
+  <div id="lighttable"><br>    <img src="/reward/images/MM1.jpg" alt="MM1"><br>    <img src="/reward/images/MM2.jpg" alt="MM2"><br>    <img src="/reward/images/MM3.jpg" alt="MM3"><br>    <img src="/reward/images/MM4.jpg" alt="MM4"><br>    <img src="/reward/images/MM5.jpg" alt="MM5"><br>    <img src="/reward/images/MM6.jpg" alt="MM6"><br>    <img src="/reward/images/MM7.jpg" alt="MM7"><br>    <img src="/reward/images/MM8.jpg" alt="MM8"><br>    <img src="/reward/images/MM9.jpg" alt="MM9"><br>    <img src="/reward/images/MM10.jpg" alt="MM10"><br>  </div>
+
+<p></p></body><br><p></p>
