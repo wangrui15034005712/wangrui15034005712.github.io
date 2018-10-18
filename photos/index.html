@@ -5,17 +5,27 @@
   
   <title>相册 | 去年夏天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="由于分辨率的不同可能造成展示效果的偏差，建议PC端访问！  .ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;} .card {width:130px;height:260px;overflow: hidden;} .ImageInCard {height:187px} //.Imag">
+  <meta name="description" content="body{         background: rgba(17, 17, 17, 0.1);     } .content{     width: auto;      height: 620px;     overflow: hidden;      margin: 10px 0px;      position">
 <meta property="og:type" content="website">
 <meta property="og:title" content="相册">
 <meta property="og:url" content="http://www.lastsummer.top/photos/index.html">
 <meta property="og:site_name" content="去年夏天">
-<meta property="og:description" content="由于分辨率的不同可能造成展示效果的偏差，建议PC端访问！  .ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;} .card {width:130px;height:260px;overflow: hidden;} .ImageInCard {height:187px} //.Imag">
+<meta property="og:description" content="body{         background: rgba(17, 17, 17, 0.1);     } .content{     width: auto;      height: 620px;     overflow: hidden;      margin: 10px 0px;      position">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-16T09:58:45.267Z">
+<meta property="og:image" content="http://www.lastsummer.top/photos/1.jpg">
+<meta property="og:image" content="http://www.lastsummer.top/photos/2.jpg">
+<meta property="og:image" content="http://www.lastsummer.top/photos/3.jpg">
+<meta property="og:image" content="http://www.lastsummer.top/photos/4.jpg">
+<meta property="og:image" content="http://www.lastsummer.top/photos/5.jpg">
+<meta property="og:image" content="http://www.lastsummer.top/photos/10.jpg">
+<meta property="og:image" content="http://www.lastsummer.top/photos/6.jpg">
+<meta property="og:image" content="http://www.lastsummer.top/photos/7.jpg">
+<meta property="og:image" content="http://www.lastsummer.top/photos/8.jpg">
+<meta property="og:updated_time" content="2018-10-18T02:37:50.837Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="由于分辨率的不同可能造成展示效果的偏差，建议PC端访问！  .ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;} .card {width:130px;height:260px;overflow: hidden;} .ImageInCard {height:187px} //.Imag">
+<meta name="twitter:description" content="body{         background: rgba(17, 17, 17, 0.1);     } .content{     width: auto;      height: 620px;     overflow: hidden;      margin: 10px 0px;      position">
+<meta name="twitter:image" content="http://www.lastsummer.top/photos/1.jpg">
   
     <link rel="alternate" href="/atom.xml" title="去年夏天" type="application/atom+xml">
   
@@ -76,10 +86,6 @@
             <li>投喂</li>
           </a>
         
-          <a href="/sponsor" title="打赏">
-            <li>打赏</li>
-          </a>
-        
     </ul>
   </div>
 </div>
@@ -113,99 +119,111 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <script src="https://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
-<script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.js"></script>
-<script src="https://unpkg.com/minigrid@3.1.1/dist/minigrid.min.js"></script>
-<div>
-<div id="imageDiv"></div>
-</div>
-<div><h6><p>由于分辨率的不同可能造成展示效果的偏差，建议PC端访问！</p></h6></div>
+        <p> <div class="content"><br>    <img class="pic1" src="/photos/1.jpg"><br>    <img class="pic2" src="/photos/2.jpg"><br>    <img class="pic3" src="/photos/3.jpg"><br>    <img class="pic4" src="/photos/4.jpg"><br>    <img class="pic5" src="/photos/5.jpg"><br>    <img class="pic6" src="/photos/10.jpg"><br>    <img class="pic7" src="/photos/6.jpg"><br>    <img class="pic8" src="/photos/7.jpg"><br>    <img class="pic9" src="/photos/8.jpg"><br> </div></p>
 <style>
-.ImageGrid {width: 100%;max-width: 1040px;margin: 0 auto;text-align: center;}
-.card {width:130px;height:260px;overflow: hidden;}
-.ImageInCard {height:187px}
-//.ImageInCard img {height:100%;width: 100%;padding: 0 0 0 0; }
-.TextInCard {height:75;background-color: #fff;}
-div p{white-space:pre-wrap;width:500px;clear:both;}/*只对中文起作用，强制换行*/
-</style>
-<script>
-photo ={
-    page: 1,
-    offset: 20,
-    init: function () {
-        var that = this;
-        $.getJSON("/photos/data.json", function (data) {
-            that.render(that.page, data);
-            //that.scroll(data);
-        });
-    },
-
-    render: function (page, data) {
-        var begin = (page - 1) * this.offset;
-        var end = page * this.offset;
-        if (begin >= data.length) return;
-        var html, li = "";
-        for (var i = begin; i < end && i < data.length; i++) {
-            li += '<div class="card">' +
-                    '<div class="ImageInCard">' + 
-                      '<a data-fancybox="gallery" href="/photos/' + data[i] + '">' +
-                        '<img src="/photos/' + data[i] + '"/><img src="/photos/' + data[i] + '"/>' +
-                      '</a>' +
-                    '</div>' +
-                    '<div class="TextInCard">'+data[i].split('.')[0]+'</div>' +
-                  '</div>' 
-        }
-        li = "";
-        for (var i = 0; i < data.length; i+=4) {
-
-            li += '<div>';
-                if(data[i]!=undefined){
-                    li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i] + '"/></div>';
-                }else{
-                    li += '<div style="float:left;margin:7px;"><img></div>';
-                }
-                if(data[i+1]!=undefined){
-                    li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i+1] + '"/></div>';
-                }else{
-                    li += '<div style="float:left;margin:7px;"><img></div>';
-                }
-                if(data[i+2]!=undefined){
-                    li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i+2] + '"/></div>';
-                }else{
-                    li += '<div style="float:left;margin:7px;"><img></div>';
-                }
-                if(data[i+3]!=undefined){
-                    li += '<div style="float:left;margin:7px;"><img src="/photos/' + data[i+3] + '"/></div>';
-                }else{
-                    li += '<div style="float:left;margin:7px;"><img></div>';
-                }
-            li += '</div>';
-        }
-        $("#imageDiv").append(li);
-        //$("#msg").append('');
-        //$("#imageDiv").lazyload();
-        //this.minigrid();
-    },
-
-    minigrid: function() {
-        var grid = new Minigrid({
-            container: '.ImageGrid',
-            item: '.card',
-            gutter: 12
-        });
-        grid.mount();
-        $(window).resize(function() {
-           grid.mount();
-        });
+body{
+        background: rgba(17, 17, 17, 0.1);
     }
-
+.content{
+    width: auto; 
+    height: 620px;
+    overflow: hidden; 
+    margin: 10px 0px; 
+    position: relative;
 }
-photo.init();
-</script>
+.content img{ 
+    z-index: 1;
+    width: 30%;
+    height: auto;
+    position: absolute;
+    padding: 10px 10px 10px 10px;
+    background: #ffffff;
+    border: 1px solid #CCCCCC;
+    /* 动画的时间 */
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+ }
+img:hover{
+    z-index: 2;
+    transform: scale(1.5);
+    -moz-transform: scale(1.5) ;
+    -webkit-transform: scale(1.5) ;
+    box-shadow: -10px 10px 20px #000000;
+    -moz-box-shadow: -10px 10px 20px #000000;
+    -webkit-box-shadow: -10px 10px 20px #000000;
+}
+.pic1{
+    left: 80px;
+    top: 50px;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+.pic2{
+    left: 220px;
+    top: 80px;
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    trans
+    form: rotate(-10deg);
+}
+.pic3{
+    left: 380px;
+    top: 100px;
+   -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+.pic4{
+    left: 380px;
+    top: 250px;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+.pic5{
+    left: 200px;
+    top: 300px;
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    trans
+    form: rotate(-10deg);
+}
+.pic6{
+    left: 120px;
+    top: 240px;
+   -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+.pic7{
+    left: 100px;
+    top: 450px;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+.pic8{
+    left: 220px;
+    top: 470px;
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    trans
+    form: rotate(-10deg);
+}
+.pic9{
+    left: 380px;
+    top: 420px;
+   -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+ </style>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjndz1p7p0009vwvbtk9e7x42" class="article-share-link-test"></a>
+      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjndz9wwq0008msvb1gigyqfh" class="article-share-link-test"></a>
       
       
     </footer>
@@ -218,6 +236,73 @@ photo.init();
     
   
 
+	
+		<! -- 添加捐赠图标 -->
+	<div align='center' style='margin-top:80px;'>
+		<div id='donate_board' class="donate_bar">
+			<a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏"></a>
+			<span class="donate_txt">
+			   &uarr;<br>
+			   欣赏此文？求鼓励，求支持！
+			</span>
+		</div>
+		<div id="donate_guide" class="donate_bar hidden" >
+			<!-- 支付宝打赏图案 -->
+			<img src="/photos/donate/zhifubao.jpg" alt="支付宝打赏"> 
+			<!-- 微信打赏图案 -->
+			<img src="/photos/donate/weixin.png" alt="微信打赏">  
+		</div>
+	 </div>
+<! -- 添加捐赠图标 -->
+<script>
+	document.getElementById('btn_donate').onclick = function(){
+		$('#donate_board').addClass('hidden');
+		$('#donate_guide').removeClass('hidden');
+	}
+	document.getElementById('donate_guide').onclick = function(){
+		$('#donate_guide').addClass('hidden');
+		$('#donate_board').removeClass('hidden');
+	}
+</script>
+<style>
+.donate_bar .donate_txt {
+	display: block;
+	color: #ffffff;
+	font: 14px/2 "Microsoft Yahei"
+}
+.hidden{
+	display: none;
+}
+a.btn_donate {
+	display: inline-block;
+	width: 82px;
+	height: 82px;
+	margin-left: auto;
+	margin-right: auto;
+	background: url(http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif)no-repeat;
+	-webkit-transition: background 0s;
+	-moz-transition: background 0s;
+	-o-transition: background 0s;
+	-ms-transition: background 0s;
+	transition: background 0s
+}
+.donate_bar .donate_txt {
+	display: block;
+	color: #9d9d9d;
+	font: 14px/2 "Microsoft Yahei"
+}
+#donate_guide{
+	height: 210px;
+	width: 500px;
+	margin: 0 auto;
+}
+#donate_guide img{
+	height: 200px;
+	height: 200px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+</style>
 	
   
 </article>
@@ -267,10 +352,6 @@ photo.init();
         
           <a href="/test" title="投喂">
             <li>投喂</li>
-          </a>
-        
-          <a href="/sponsor" title="打赏">
-            <li>打赏</li>
           </a>
         
     </ul>
@@ -367,8 +448,6 @@ new WOW().init();
             <a href="/photos" title="" class="menuItem">相册</a>
           
             <a href="/test" title="" class="menuItem">投喂</a>
-          
-            <a href="/sponsor" title="" class="menuItem">打赏</a>
           
         </div>
         
