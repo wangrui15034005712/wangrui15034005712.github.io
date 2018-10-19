@@ -122,16 +122,26 @@ function initPhotos() {
 
 $(function(){
     $('#lighttable img').each( function(s,index) {
-        debugger
-        $("#lighttable img").eq(s).hide();
-    });
+            $("#lighttable img").eq(s).hide();
+        });
 
     $("select").change(function(){
         var name = $("select").val();
-        debugger
         $('#lighttable img').each( function(s,index) {
             $("#lighttable img").eq(s).hide();
         });
+        if(name=="mingxing"){
+            $("#lighttable img").eq(0).show();
+            $("#lighttable img").eq(1).show();
+            $("#lighttable img").eq(2).show();
+            $("#lighttable img").eq(3).show();
+            $("#lighttable img").eq(4).show();
+            $("#lighttable img").eq(5).show();
+            $("#lighttable img").eq(6).show();
+            $("#lighttable img").eq(7).show();
+            $("#lighttable img").eq(8).show();
+            $("#lighttable img").eq(9).show();
+        }
         if(name=="wangdan1"){
             $("#lighttable img").eq(10).show();
             $("#lighttable img").eq(11).show();
