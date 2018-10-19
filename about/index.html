@@ -32,9 +32,19 @@
   
 
   
-	<script>
-    alert("1234");
-	</script>
+	(function(){
+	
+	 if('{{ post.password }}'){
+		debugger
+	 }
+        if('{{ page.password }}'){
+			debugger
+            if (prompt('请输入文章密码') !== '{{ page.password }}'){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
   
 </head>
 
@@ -124,7 +134,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/about/index.html" data-id="cjnfdn3fq0003d0vb8qydtgbt" class="article-share-link-test"></a>
+      <a data-url="http://www.lastsummer.top/about/index.html" data-id="cjnfdtyrc0008h0vbebq9pa9h" class="article-share-link-test"></a>
       
       
     </footer>

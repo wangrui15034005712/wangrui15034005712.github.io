@@ -42,9 +42,19 @@
   
 
   
-	<script>
-    alert("1234");
-	</script>
+	(function(){
+	
+	 if('{{ post.password }}'){
+		debugger
+	 }
+        if('{{ page.password }}'){
+			debugger
+            if (prompt('请输入文章密码') !== '{{ page.password }}'){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
   
 </head>
 
@@ -249,7 +259,7 @@ img:hover{
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjnfdn3gh000td0vbcvk96jk4" class="article-share-link-test"></a>
+      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjnfdtyrz000uh0vb4p26xmte" class="article-share-link-test"></a>
       
       
     </footer>
