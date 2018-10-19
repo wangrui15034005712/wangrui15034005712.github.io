@@ -124,8 +124,24 @@ $(function(){
     $("select").change(function(){
         var name = $("select").val();
         $('#lighttable img').each( function(s,index) {
-            debugger
-        });
+                $("#lighttable img").eq(s).hide();
+            });
+        if(name=="wangdan1"){
+            $("#lighttable img").eq(0).show();
+            $("#lighttable img").eq(1).show();
+            $("#lighttable img").eq(2).show();
+            $("#lighttable img").eq(3).show();
+        }
+        if(name=="wangdan2"){
+            $("#lighttable img").eq(4).show();
+            $("#lighttable img").eq(5).show();
+            $("#lighttable img").eq(6).show();
+        }
+        if(name=="wangdan3"){
+            $("#lighttable img").eq(7).show();
+            $("#lighttable img").eq(8).show();
+            $("#lighttable img").eq(9).show();
+        }
     });
 });
 
