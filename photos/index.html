@@ -1,4 +1,3 @@
-<p><body><br>  <div id="wooden-table"><img src="/photos/wooden-table.jpg" alt="Wooden table image"></div><br>  <div id="lighttable"><br> <img src="/photos/a.jpg" alt="MM1"><br>    <img src="/photos/b.jpg" alt="MM2"><br>    <img src="/photos/c.jpg" alt="MM3"><br>    <img src="/photos/d.jpg" alt="MM4"><br>    <img src="/photos/e.jpg" alt="MM5"><br>    <img src="/photos/f.jpg" alt="MM6"><br>    <img src="/photos/g.jpg" alt="MM7"><br>    <img src="/photos/h.jpg" alt="MM8"><br>    <img src="/photos/i.jpg" alt="MM9"><br>    <img src="/photos/k.jpg" alt="MM10"><br>    <img src="/photos/l.jpg" alt="MM11"><br> </div><br></body></p>
 <p><head></head></p>
 <style type="text/css">
 /* The page body */
@@ -44,58 +43,84 @@ html, body {
 
 <script type="text/javascript">
 
-<p>var newImageZIndex = 1;  // To make sure newly-loaded images land on top of images on the table<br>var loaded = false;      // Used to prevent initPhotos() running twice</p>
-<p>// When the document is ready, fire up the table!<br>$( init );</p>
-<p>// When the wooden table image has loaded, start bringing in the photos<br>function init() {<br>  var woodenTable = $(‘#wooden-table img’);<br>  woodenTable.load( initPhotos );</p>
-<p>  // Hack for browsers that don’t fire load events for cached images<br>  if ( woodenTable.get(0).complete ) $(woodenTable).trigger(“load”);<br>}</p>
-<p>// Set up each of the photos on the table</p>
-<p>function initPhotos() {</p>
-<p>  // (Ensure this function doesn’t run twice)<br>  if ( loaded ) return;<br>  loaded = true;</p>
-<p>  // The table image has loaded, so bring in the table<br>  $(‘#lighttable’).fadeIn(‘fast’);</p>
-<p>  // Process each photo in turn…<br>  $(‘#lighttable img’).each( function(index) {</p>
-<pre><code>// Set a random position and angle for this photo
-var left = Math.floor( Math.random() * 1000);
-var top = Math.floor( Math.random() * 300);
-var angle = Math.floor( Math.random() * 60 - 30 );
-$(this).css( &apos;left&apos;, left+&apos;px&apos; );
-$(this).css( &apos;top&apos;, top+&apos;px&apos; );
-$(this).css( &apos;transform&apos;, &apos;rotate(&apos; + angle + &apos;deg)&apos; );   
-$(this).css( &apos;-moz-transform&apos;, &apos;rotate(&apos; + angle + &apos;deg)&apos; );   
-$(this).css( &apos;-webkit-transform&apos;, &apos;rotate(&apos; + angle + &apos;deg)&apos; );
-$(this).css( &apos;-o-transform&apos;, &apos;rotate(&apos; + angle + &apos;deg)&apos; );
+var newImageZIndex = 1;  // To make sure newly-loaded images land on top of images on the table
+var loaded = false;      // Used to prevent initPhotos() running twice
 
-// Make the photo draggable
-$(this).draggable( { containment: &apos;parent&apos;, stack: &apos;#lighttable img&apos;, cursor: &apos;pointer&apos; } );
+// When the document is ready, fire up the table!
+$( init );
 
-// Hide the photo for now, in case it hasn&apos;t finished loading
-$(this).hide();
+// When the wooden table image has loaded, start bringing in the photos
+function init() {
+  var woodenTable = $('#wooden-table img');
+  woodenTable.load( initPhotos );
 
-// When the photo image has loaded...
-$(this).load( function() {
+  // Hack for browsers that don't fire load events for cached images
+  if ( woodenTable.get(0).complete ) $(woodenTable).trigger("load");
+}
 
-  // (Ensure this function doesn&apos;t run twice)
-  if ( $(this).data(&apos;loaded&apos;) ) return;
-  $(this).data(&apos;loaded&apos;, true);
+// Set up each of the photos on the table
 
-  // Record the photo&apos;s true dimensions
-  var imgWidth = $(this).width();
-  var imgHeight = $(this).height();
+function initPhotos() {
 
-  // Make the photo bigger, so it looks like it&apos;s high above the table
-  $(this).css( &apos;width&apos;, imgWidth * 1.5 );
-  $(this).css( &apos;height&apos;, imgHeight * 1.5 );
+  // (Ensure this function doesn't run twice)
+  if ( loaded ) return;
+  loaded = true;
 
-  // Make it completely transparent, ready for fading in
-  $(this).css( &apos;opacity&apos;, 0 );
+  // The table image has loaded, so bring in the table
+  $('#lighttable').fadeIn('fast');
 
-  // Make sure its z-index is higher than the photos already on the table
-  $(this).css( &apos;z-index&apos;, newImageZIndex++ );
+  // Process each photo in turn...
+  $('#lighttable img').each( function(index) {
 
-  // Gradually reduce the photo&apos;s dimensions to normal, fading it in as we go
-  $(this).animate( { width: imgWidth, height: imgHeight, opacity: .95 }, 1200 );
-} );
+    // Set a random position and angle for this photo
+    var left = Math.floor( Math.random() * 1000);
+    var top = Math.floor( Math.random() * 300);
+    var angle = Math.floor( Math.random() * 60 - 30 );
+    $(this).css( 'left', left+'px' );
+    $(this).css( 'top', top+'px' );
+    $(this).css( 'transform', 'rotate(' + angle + 'deg)' );   
+    $(this).css( '-moz-transform', 'rotate(' + angle + 'deg)' );   
+    $(this).css( '-webkit-transform', 'rotate(' + angle + 'deg)' );
+    $(this).css( '-o-transform', 'rotate(' + angle + 'deg)' );
 
-// Hack for browsers that don&apos;t fire load events for cached images
-if ( this.complete ) $(this).trigger(&quot;load&quot;);
-</code></pre><p>  });</p>
-<p>}<br></script><br><br><p></p>
+    // Make the photo draggable
+    $(this).draggable( { containment: 'parent', stack: '#lighttable img', cursor: 'pointer' } );
+
+    // Hide the photo for now, in case it hasn't finished loading
+    $(this).hide();
+
+    // When the photo image has loaded...
+    $(this).load( function() {
+
+      // (Ensure this function doesn't run twice)
+      if ( $(this).data('loaded') ) return;
+      $(this).data('loaded', true);
+
+      // Record the photo's true dimensions
+      var imgWidth = $(this).width();
+      var imgHeight = $(this).height();
+
+      // Make the photo bigger, so it looks like it's high above the table
+      $(this).css( 'width', imgWidth * 1.5 );
+      $(this).css( 'height', imgHeight * 1.5 );
+
+      // Make it completely transparent, ready for fading in
+      $(this).css( 'opacity', 0 );
+
+      // Make sure its z-index is higher than the photos already on the table
+      $(this).css( 'z-index', newImageZIndex++ );
+
+      // Gradually reduce the photo's dimensions to normal, fading it in as we go
+      $(this).animate( { width: imgWidth, height: imgHeight, opacity: .95 }, 1200 );
+    } );
+
+    // Hack for browsers that don't fire load events for cached images
+    if ( this.complete ) $(this).trigger("load");
+
+  });
+
+}
+</script>
+
+<p></p>
+<p><body><br>  <div id="wooden-table"><img src="/photos/wooden-table.jpg" alt="Wooden table image"></div><br>  <div id="lighttable"><br>    <img src="/photos/a.jpg" alt="MM1"><br>    <img src="/photos/b.jpg" alt="MM2"><br>    <img src="/photos/c.jpg" alt="MM3"><br>    <img src="/photos/d.jpg" alt="MM4"><br>    <img src="/photos/e.jpg" alt="MM5"><br>    <img src="/photos/f.jpg" alt="MM6"><br>    <img src="/photos/g.jpg" alt="MM7"><br>    <img src="/photos/h.jpg" alt="MM8"><br>    <img src="/photos/i.jpg" alt="MM9"><br>    <img src="/photos/k.jpg" alt="MM10"><br>    <img src="/photos/l.jpg" alt="MM11"><br> </div><br></body><br></p>
