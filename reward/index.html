@@ -119,12 +119,10 @@ function initPhotos() {
   });
 
 }
-
-$(function(){
-    $('#lighttable img').each( function(s,index) {
+$('#lighttable img').each( function(s,index) {
             $("#lighttable img").eq(s).hide();
         });
-
+$(function(){
     $("select").change(function(){
         var name = $("select").val();
         $('#lighttable img').each( function(s,index) {
