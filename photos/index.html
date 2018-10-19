@@ -5,30 +5,29 @@
   
   <title>相册 | 去年夏天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="/* The page body */ html, body {   background: #333;   overflow: hidden;   font-family: Helvetica, Arial, sans-serif; }  /* The div holding the wooden table img tag */ #wooden-table {   po">
+  <meta name="description" content="body{         background: rgba(17, 17, 17, 0.1);     } .content{     width: auto;      height: 620px;     overflow: hidden;      margin: 10px 0px;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="相册">
 <meta property="og:url" content="http://www.lastsummer.top/photos/index.html">
 <meta property="og:site_name" content="去年夏天">
-<meta property="og:description" content="/* The page body */ html, body {   background: #333;   overflow: hidden;   font-family: Helvetica, Arial, sans-serif; }  /* The div holding the wooden table img tag */ #wooden-table {   po">
+<meta property="og:description" content="body{         background: rgba(17, 17, 17, 0.1);     } .content{     width: auto;      height: 620px;     overflow: hidden;      margin: 10px 0px;">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://www.lastsummer.top/photos/images/wooden-table.jpg">
 <meta property="og:image" content="http://www.lastsummer.top/photos/a.jpg">
-<meta property="og:image" content="http://www.lastsummer.top/photos/b.jpg">
+<meta property="og:image" content="http://www.lastsummer.top/photos/k.jpg">
 <meta property="og:image" content="http://www.lastsummer.top/photos/c.jpg">
 <meta property="og:image" content="http://www.lastsummer.top/photos/d.jpg">
 <meta property="og:image" content="http://www.lastsummer.top/photos/e.jpg">
 <meta property="og:image" content="http://www.lastsummer.top/photos/f.jpg">
 <meta property="og:image" content="http://www.lastsummer.top/photos/g.jpg">
 <meta property="og:image" content="http://www.lastsummer.top/photos/h.jpg">
-<meta property="og:image" content="http://www.lastsummer.top/photos/i.jpg">
-<meta property="og:image" content="http://www.lastsummer.top/photos/k.jpg">
 <meta property="og:image" content="http://www.lastsummer.top/photos/l.jpg">
-<meta property="og:updated_time" content="2018-10-19T02:56:20.925Z">
+<meta property="og:image" content="http://www.lastsummer.top/photos/i.jpg">
+<meta property="og:image" content="http://www.lastsummer.top/photos/b.jpg">
+<meta property="og:updated_time" content="2018-10-19T02:59:05.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="/* The page body */ html, body {   background: #333;   overflow: hidden;   font-family: Helvetica, Arial, sans-serif; }  /* The div holding the wooden table img tag */ #wooden-table {   po">
-<meta name="twitter:image" content="http://www.lastsummer.top/photos/images/wooden-table.jpg">
+<meta name="twitter:description" content="body{         background: rgba(17, 17, 17, 0.1);     } .content{     width: auto;      height: 620px;     overflow: hidden;      margin: 10px 0px;">
+<meta name="twitter:image" content="http://www.lastsummer.top/photos/a.jpg">
   
     <link rel="alternate" href="/atom.xml" title="去年夏天" type="application/atom+xml">
   
@@ -126,131 +125,126 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  <div id="wooden-table"><img src="/photos/images/wooden-table.jpg" alt="Wooden table image"></div><br>  <div id="lighttable"><br>    <img src="/photos/a.jpg" alt="MM1"><img src="/photos/b.jpg" alt="MM2"><br><img src="/photos/c.jpg" alt="MM3"><img src="/photos/d.jpg" alt="MM4"><img src="/photos/e.jpg" alt="MM5"><img src="/photos/f.jpg" alt="MM6"><img src="/photos/g.jpg" alt="MM7"><img src="/photos/h.jpg" alt="MM8"><img src="/photos/i.jpg" alt="MM9"><img src="/photos/k.jpg" alt="MM10"><img src="/photos/l.jpg" alt="MM11"><br>  </div></p>
-<style type="text/css">
-/* The page body */
-html, body {
-  background: #333;
-  overflow: hidden;
-  font-family: Helvetica, Arial, sans-serif;
+        <p> <div class="content"><br>    <img class="pic1" src="/photos/a.jpg"><br>    <img class="pic2" src="/photos/k.jpg"><br>    <img class="pic3" src="/photos/c.jpg"><br>    <img class="pic4" src="/photos/d.jpg"><br>    <img class="pic5" src="/photos/e.jpg"><br>    <img class="pic6" src="/photos/f.jpg"><br>    <img class="pic7" src="/photos/g.jpg"><br>    <img class="pic8" src="/photos/h.jpg"><br>    <img class="pic9" src="/photos/l.jpg"><br>    <img class="pic10" src="/photos/i.jpg"><br>    <img class="pic11" src="/photos/b.jpg"><br> </div></p>
+<style>
+body{
+        background: rgba(17, 17, 17, 0.1);
+    }
+.content{
+    width: auto; 
+    height: 620px;
+    overflow: hidden; 
+    margin: 10px 0px; 
+    position: relative;
 }
-
-/* The div holding the wooden table img tag */
-#wooden-table {
-  position: absolute;
-  left: -5000px;
+.content img{ 
+    z-index: 1;
+    width: 30%;
+    height: auto;
+    position: absolute;
+    padding: 10px 10px 10px 10px;
+    background: #ffffff;
+    border: 1px solid #CCCCCC;
+    /* 动画的时间 */
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+ }
+img:hover{
+    z-index: 2;
+    transform: scale(1.5);
+    -moz-transform: scale(1.5) ;
+    -webkit-transform: scale(1.5) ;
+    box-shadow: -10px 10px 20px #000000;
+    -moz-box-shadow: -10px 10px 20px #000000;
+    -webkit-box-shadow: -10px 10px 20px #000000;
 }
-
-/* The light table itself */
-#lighttable {
-  position: relative;
-  width: 500px;
-  height: 600px;
-  padding: 70px;
-  margin: 0 auto;
-  border: 20px solid #111;
-  display: none;
+.pic1{
+    left: 80px;
+    top: 50px;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    transform: rotate(20deg);
 }
-
-/* Photos on the light table */
-#lighttable img {
-  border: 10px solid #fff;
-  box-shadow: 0 0 1em rgba(0, 0, 0, 0.9);
-  -moz-box-shadow: 0 0 1em rgba(0, 0, 0, 0.9);
-  -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.9);
-  position: absolute;
-  left: -9999px;
-  top: -9999px;
+.pic11{
+    left: 250px;
+    top: 5px;
+   -webkit-transform: rotate(-20deg);
+    -moz-transform: rotate(-20deg);
+    trans
+    form: rotate(-20deg);
 }
-</style>
-
-<script type="text/javascript" src="/js/jquery.js"></script>
-<script type="text/javascript" src="/js/jquery-ui-1.8.2.custom.min.js"></script>
-
-<script type="text/javascript">
-
-var newImageZIndex = 1;  // To make sure newly-loaded images land on top of images on the table
-var loaded = false;      // Used to prevent initPhotos() running twice
-
-// When the document is ready, fire up the table!
-$( init );
-
-// When the wooden table image has loaded, start bringing in the photos
-function init() {
-  var woodenTable = $('#wooden-table img');
-  woodenTable.load( initPhotos );
-
-  // Hack for browsers that don't fire load events for cached images
-  if ( woodenTable.get(0).complete ) $(woodenTable).trigger("load");
+.pic10{
+    left: 390px;
+    top: 30px;
+   -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    transform: rotate(20deg);
 }
-
-// Set up each of the photos on the table
-
-function initPhotos() {
-
-  // (Ensure this function doesn't run twice)
-  if ( loaded ) return;
-  loaded = true;
-
-  // The table image has loaded, so bring in the table
-  $('#lighttable').fadeIn('fast');
-
-  // Process each photo in turn...
-  $('#lighttable img').each( function(index) {
-
-    // Set a random position and angle for this photo
-    var left = Math.floor( Math.random() * 1000);
-    var top = Math.floor( Math.random() * 300);
-    var angle = Math.floor( Math.random() * 60 - 30 );
-    $(this).css( 'left', left+'px' );
-    $(this).css( 'top', top+'px' );
-    $(this).css( 'transform', 'rotate(' + angle + 'deg)' );   
-    $(this).css( '-moz-transform', 'rotate(' + angle + 'deg)' );   
-    $(this).css( '-webkit-transform', 'rotate(' + angle + 'deg)' );
-    $(this).css( '-o-transform', 'rotate(' + angle + 'deg)' );
-
-    // Make the photo draggable
-    $(this).draggable( { containment: 'parent', stack: '#lighttable img', cursor: 'pointer' } );
-
-    // Hide the photo for now, in case it hasn't finished loading
-    $(this).hide();
-
-    // When the photo image has loaded...
-    $(this).load( function() {
-
-      // (Ensure this function doesn't run twice)
-      if ( $(this).data('loaded') ) return;
-      $(this).data('loaded', true);
-
-      // Record the photo's true dimensions
-      var imgWidth = $(this).width();
-      var imgHeight = $(this).height();
-
-      // Make the photo bigger, so it looks like it's high above the table
-      $(this).css( 'width', imgWidth * 1.5 );
-      $(this).css( 'height', imgHeight * 1.5 );
-
-      // Make it completely transparent, ready for fading in
-      $(this).css( 'opacity', 0 );
-
-      // Make sure its z-index is higher than the photos already on the table
-      $(this).css( 'z-index', newImageZIndex++ );
-
-      // Gradually reduce the photo's dimensions to normal, fading it in as we go
-      $(this).animate( { width: imgWidth, height: imgHeight, opacity: .95 }, 1200 );
-    } );
-
-    // Hack for browsers that don't fire load events for cached images
-    if ( this.complete ) $(this).trigger("load");
-
-  });
-
+.pic2{
+    left: 220px;
+    top: 80px;
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    trans
+    form: rotate(-10deg);
 }
-</script>
+.pic3{
+    left: 380px;
+    top: 100px;
+   -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+.pic4{
+    left: 380px;
+    top: 250px;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+.pic5{
+    left: 200px;
+    top: 300px;
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    trans
+    form: rotate(-10deg);
+}
+.pic6{
+    left: 70px;
+    top: 240px;
+   -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+.pic7{
+    left: 100px;
+    top: 450px;
+    -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+.pic8{
+    left: 220px;
+    top: 470px;
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    trans
+    form: rotate(-10deg);
+}
+.pic9{
+    left: 380px;
+    top: 400px;
+   -webkit-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+ </style>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjnffc3cz000954vb9eny1asb" class="article-share-link-test"></a>
+      <a data-url="http://www.lastsummer.top/photos/index.html" data-id="cjnffe4oc0009k8vb8je7mca5" class="article-share-link-test"></a>
       
       
     </footer>
