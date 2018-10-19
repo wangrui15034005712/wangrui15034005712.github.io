@@ -120,17 +120,19 @@ function initPhotos() {
 
 }
     (function(){
+            /**
             var password = prompt('请输入文章密码');
             if (password != 'admin'){
                 alert('密码错误！');
                 history.back();
             }
+            */
     })();
 $(function(){
     $('#lighttable img').each( function(s,index) {
             $("#lighttable img").eq(s).hide();
         });
-
+    debugger
     $("select").change(function(){
         var name = $("select").val();
         $('#lighttable img').each( function(s,index) {
