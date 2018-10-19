@@ -121,38 +121,7 @@ function initPhotos() {
 
 }
 
-$(function(){
-    $("#wangdan1").hide();
-    $("#wangdan2").hide();
-    $("#wangdan3").hide();
-    $("select").change(function(){
-        $("#mingxing");
-        $("#wangdan");
-        init();
-        var name = $("select").val();
-        if(name == "wangdan1"){
-            $("#wangdan1").show();
-            $("#mingxing").hide();
-            $("#wangdan2").hide();
-            $("#wangdan3").hide();
-        }else if(name == "mingxing"){
-            $("#wangdan1").hide();
-            $("#mingxing").show();
-            $("#wangdan2").hide();
-            $("#wangdan3").hide();
-        }else if(name == "wangdan2"){
-            $("#wangdan1").hide();
-            $("#mingxing").hide();
-            $("#wangdan2").show();
-            $("#wangdan3").hide();
-        }else if(name == "wangdan3"){
-            $("#wangdan1").hide();
-            $("#mingxing").hide();
-            $("#wangdan2").hide();
-            $("#wangdan3").show();
-        }
-    });
-});
+
 
 </script>
 
