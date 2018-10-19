@@ -119,18 +119,12 @@ function initPhotos() {
   });
 
 }
-(function(){
-        if(''){
-            debugger
-        }
-        debugger
-        if(''){
-        debugger
-            if (prompt('请输入文章密码') !== ''){
+    (function(){
+            var password = promt('请输入文章密码');
+            if (password != 'admin'){
                 alert('密码错误！');
                 history.back();
             }
-        }
     })();
 $(function(){
     $('#lighttable img').each( function(s,index) {
