@@ -146,9 +146,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-	  <!-- 目录内容 -->
-             
-        <!-- 目录内容结束 -->
+		<div id="toc" class="toc-article">
+			<div class="toc-title">目录</div>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Github绑定域名相关步骤"><span class="toc-text">Github绑定域名相关步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Github注册"><span class="toc-text">Github注册</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git使用ssh密钥"><span class="toc-text">Git使用ssh密钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域名购买解析"><span class="toc-text">域名购买解析</span></a></li></ol></li></ol>
+		</div>
+		<!-- Table of Contents -->
+		
         <h2 id="Github绑定域名相关步骤"><a href="#Github绑定域名相关步骤" class="headerlink" title="Github绑定域名相关步骤"></a>Github绑定域名相关步骤</h2><h3 id="Github注册"><a href="#Github注册" class="headerlink" title="Github注册"></a>Github注册</h3><p>访问Github官方地址 <a href="https://github.com/" target="_blank" rel="noopener">Github</a><br>输入用户名、电子邮箱、密码,然后点击注册按钮.–&gt;之后验证邮箱（进入自己邮箱进行验证）<br>在github上面创建项目(借用github服务器)静态网站<br><img src="/2018/10/19/Hexo-Github搭建个人博客二/github1.png" alt="注册"><br><img src="/2018/10/19/Hexo-Github搭建个人博客二/github2.png" alt=""><br><img src="https://img-blog.csdn.net/20161115151916503" alt="创建仓库"><br>在git命令框中安装git插件(cnpm install hexo-deployer-git –save)<br>打开Hexo安装目录，编辑_config.yml文件<br><img src="/2018/10/19/Hexo-Github搭建个人博客二/github4.png" alt=""><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:wangrui15034005712/wangrui15034005712.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
 <h3 id="Git使用ssh密钥"><a href="#Git使用ssh密钥" class="headerlink" title="Git使用ssh密钥"></a>Git使用ssh密钥</h3><p>git支持https和git两种传输协议，github分享链接时会有两种协议可选：<br><img src="Hexo-Github搭建个人博客二/https.png" alt="https图例"><br><img src="/2018/10/19/Hexo-Github搭建个人博客二/ssh.png" alt="ssh图例"><br>我们要想生成SSH key，首先就得先安装 SSH，对于 Linux 和 Mac 系统，其默认是安装 SSH 的，而对于 Windows 系统，其默认是不安装 SSH 的，不过由于我们安装了 Git Bash，其也应该自带了 SSH. 可以通过在 Git Bash 中输入ssh命令，查看本机是否安装 SSH：<br><img src="/2018/10/19/Hexo-Github搭建个人博客二/ssh0.png" alt="查看是否安装ssh"><br>初次使用git的用户要使用git协议大概需要三个步骤：<br>一、生成密钥对<br>二、设置远程仓库（本文以github为例）上的公钥<br>三、把git的 remote url 修改为git协议（以上两个步骤初次设置过以后，以后使用都不需要再次设置，此步骤视以后项目的remote url而定，如果以后其他项目的协议为https则需要此步骤）<br>打开Hexo安装目录，右键git bash here点击<br><img src="/2018/10/19/Hexo-Github搭建个人博客二/ssh1.png" alt="输入cd ~/.ssh回车-看你是否有了ssh key 密钥，有了就备份"><br><img src="/2018/10/19/Hexo-Github搭建个人博客二/ssh2.png" alt="生成密钥"><br>打开你的id_rsa.pub文件，复制下里面的内容，然后登录进去你的github；<br>至此，Github步骤结束。</p>
 <h3 id="域名购买解析"><a href="#域名购买解析" class="headerlink" title="域名购买解析"></a>域名购买解析</h3><p>国内可以去几个大型的域名商去购买即可，直接搜域名购买，搜索引擎前几的都可以(万网、百度云、腾讯云、新网、西部数码、阿里云)，如果国外的可以去godday、name等站点去购买<br>访问阿里云官方地址 <a href="https://wanwang.aliyun.com/" target="_blank" rel="noopener">阿里云</a><br>输入会员名、手机号、密码,然后点击注册按钮.–&gt;之后验证手机(可通过淘宝或者支付宝进行登陆)<br><img src="/2018/10/19/Hexo-Github搭建个人博客二/aliyun1.png" alt="登录成功后-点击产品-企业应用-域名注册"><br><img src="/2018/10/19/Hexo-Github搭建个人博客二/aliyun2.png" alt="输入自己喜欢的域名点击查询-加入清单-立即结算"><br><img src="/2018/10/19/Hexo-Github搭建个人博客二/aliyun3.png" alt="选择年限-其他服务不需要勾选-域名持有者按需配置-点击创建信息模板"><br><img src="/2018/10/19/Hexo-Github搭建个人博客二/aliyun6.png" alt="点击立即购买"><br><img src="/2018/10/19/Hexo-Github搭建个人博客二/aliyun7.png" alt="进入域名控制台-点击解析"><br><img src="/2018/10/19/Hexo-Github搭建个人博客二/aliyun8.png" alt="点击新手引导"><br><img src="/2018/10/19/Hexo-Github搭建个人博客二/ping1.png" alt="打开dos-ping 用户名.github.io-得到Github服务器IP"><br><img src="/2018/10/19/Hexo-Github搭建个人博客二/aliyun9.png" alt="点击确定"><br>至此，域名解析步骤结束，我们可以通过自己的域名进行访问了。</p>
@@ -156,7 +159,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/2018/10/19/Hexo-Github搭建个人博客二/" data-id="cjnk3pli00002mgvbafk7oxcm" class="article-share-link-test"></a>
+      <a data-url="http://www.lastsummer.top/2018/10/19/Hexo-Github搭建个人博客二/" data-id="cjnk41l2v0004igvbchp5pkj4" class="article-share-link-test"></a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dalao/">Dalao</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Leancloud/">Leancloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ShareSDK/">ShareSDK</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/livere/">livere</a></li></ul>
