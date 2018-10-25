@@ -101,7 +101,7 @@
 
         <section id="main">
   
-    <article id="w-Hexo博客添加打赏功能" class="wow slideInRight article article-type-w" itemscope itemprop="blogPost">
+    <article id="post-Hexo博客添加打赏功能" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/25/Hexo博客添加打赏功能/" class="article-date">
   <time class="post-time" datetime="2018-10-25T01:31:51.000Z" itemprop="datePublished">
@@ -129,11 +129,38 @@
   </div>
 
           
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2018/10/25/Hexo博客添加打赏功能/" class="leancloud_visitors" data-flag-title="Hexo博客添加打赏功能">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
+
+          
         </div>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
+		<!-- Table of Contents -->
+		
+		<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+<style>
+/* 新添加的 */
+#container .show-toc-btn,#container .toc-article{display:block}
+.toc-article{z-index:100;background:#fff;border:1px solid #ccc;max-width:250px;min-width:150px;max-height:500px;overflow-y:auto;-webkit-box-shadow:5px 5px 2px #ccc;box-shadow:5px 5px 2px #ccc;font-size:12px;padding:10px;position:fixed;right:35px;top:129px}.toc-article .toc-close{font-weight:700;font-size:20px;cursor:pointer;float:right;color:#ccc}.toc-article .toc-close:hover{color:#000}.toc-article .toc{font-size:12px;padding:0;line-height:20px}.toc-article .toc .toc-number{color:#333}.toc-article .toc .toc-text:hover{text-decoration:underline;color:#2a6496}.toc-article li{list-style-type:none}.toc-article .toc-level-1{margin:4px 0}.toc-article .toc-child{}@-moz-keyframes cd-bounce-1{0%{opacity:0;-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}60%{opacity:1;-o-transform:scale(1.01);-webkit-transform:scale(1.01);-moz-transform:scale(1.01);-ms-transform:scale(1.01);transform:scale(1.01)}100%{-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}}@-webkit-keyframes cd-bounce-1{0%{opacity:0;-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}60%{opacity:1;-o-transform:scale(1.01);-webkit-transform:scale(1.01);-moz-transform:scale(1.01);-ms-transform:scale(1.01);transform:scale(1.01)}100%{-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}}@-o-keyframes cd-bounce-1{0%{opacity:0;-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}60%{opacity:1;-o-transform:scale(1.01);-webkit-transform:scale(1.01);-moz-transform:scale(1.01);-ms-transform:scale(1.01);transform:scale(1.01)}100%{-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}}@keyframes cd-bounce-1{0%{opacity:0;-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}60%{opacity:1;-o-transform:scale(1.01);-webkit-transform:scale(1.01);-moz-transform:scale(1.01);-ms-transform:scale(1.01);transform:scale(1.01)}100%{-o-transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}}.show-toc-btn{display:none;z-index:10;width:30px;min-height:14px;overflow:hidden;padding:4px 6px 8px 5px;border:1px solid #ddd;border-right:none;position:fixed;right:40px;text-align:center;background-color:#f9f9f9}.show-toc-btn .btn-bg{margin-top:2px;display:block;width:16px;height:14px;background:url(http://7xtawy.com1.z0.glb.clouddn.com/show.png) no-repeat;-webkit-background-size:100%;-moz-background-size:100%;background-size:100%}.show-toc-btn .btn-text{color:#999;font-size:12px}.show-toc-btn:hover{cursor:pointer}.show-toc-btn:hover .btn-bg{background-position:0 -16px}.show-toc-btn:hover .btn-text{font-size:12px;color:#ea8010}
+.toc-article li ol, .toc-article li ul {
+    margin-left: 30px;
+}
+.toc-article ol, .toc-article ul {
+    margin: 10px 0;
+}
+
+</style>
         <p>基本思路是将微信和支付宝的收款二维码放到每篇文章的最后，打赏的时候扫下二维码就可以了。</p>
 <p>以 hexo-theme-shana-master 主题为例：</p>
 <h3 id="第一步：编写打赏模块的代码"><a href="#第一步：编写打赏模块的代码" class="headerlink" title="第一步：编写打赏模块的代码"></a>第一步：编写打赏模块的代码</h3><p><code>themes\hexo-theme-shana-master\layout\_partial</code> 下新建 <code>donate.ejs</code> 输入如下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;! -- 添加捐赠图标 --&gt;</span><br><span class="line">	&lt;div align=<span class="string">'center'</span> style=<span class="string">'margin-top:80px;'</span>&gt;</span><br><span class="line">		&lt;div id=<span class="string">'donate_board'</span> class=<span class="string">"donate_bar"</span>&gt;</span><br><span class="line">			&lt;a id=<span class="string">"btn_donate"</span> class=<span class="string">"btn_donate"</span> href=<span class="string">"javascript:;"</span> title=<span class="string">"打赏"</span>&gt;&lt;/a&gt;</span><br><span class="line">			&lt;span class=<span class="string">"donate_txt"</span>&gt;</span><br><span class="line">			   &amp;uarr;&lt;br&gt;</span><br><span class="line">			   &lt;%=theme.donate_message%&gt;</span><br><span class="line">			&lt;/span&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;div id=<span class="string">"donate_guide"</span> class=<span class="string">"donate_bar hidden"</span> &gt;</span><br><span class="line">			&lt;!-- 支付宝打赏图案 --&gt;</span><br><span class="line">			&lt;img src=<span class="string">"/photos/donate/zhifubao.jpg"</span> alt=<span class="string">"支付宝打赏"</span>&gt; </span><br><span class="line">			&lt;!-- 微信打赏图案 --&gt;</span><br><span class="line">			&lt;img src=<span class="string">"/photos/donate/weixin.png"</span> alt=<span class="string">"微信打赏"</span>&gt;  </span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;script&gt;</span><br><span class="line">		document.getElementById(<span class="string">'btn_donate'</span>).onclick = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			$(<span class="string">'#donate_board'</span>).addClass(<span class="string">'hidden'</span>);</span><br><span class="line">			$(<span class="string">'#donate_guide'</span>).removeClass(<span class="string">'hidden'</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		document.getElementById(<span class="string">'donate_guide'</span>).onclick = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			$(<span class="string">'#donate_guide'</span>).addClass(<span class="string">'hidden'</span>);</span><br><span class="line">			$(<span class="string">'#donate_board'</span>).removeClass(<span class="string">'hidden'</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">	 &lt;/div&gt;</span><br><span class="line">&lt;! -- 添加捐赠图标 --&gt;</span><br></pre></td></tr></table></figure></p>
@@ -142,16 +169,12 @@
 <h3 id="第三步：-讲打赏模块整合到文章中"><a href="#第三步：-讲打赏模块整合到文章中" class="headerlink" title="第三步： 讲打赏模块整合到文章中"></a>第三步： 讲打赏模块整合到文章中</h3><p>在 <code>themes\hexo-theme-shana-master\layout\_partial\article.ejs</code> 中的 <code>&lt;article&gt; &lt;/article&gt;</code> 标签内添加如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (!index &amp;&amp; theme.donate &amp;&amp; post.donate)&#123; %&gt;</span><br><span class="line">	&lt;%- partial(&apos;donate/donate&apos;) %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure></p>
 <h3 id="第四步：-编写配置文件"><a href="#第四步：-编写配置文件" class="headerlink" title="第四步： 编写配置文件"></a>第四步： 编写配置文件</h3><p>我们在<code>\themes\hexo-theme-shana-master\_config.yml</code>主题文件中关闭和打开打赏功能，还可以自定义设置打赏文案。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#是否开启打赏功能</span><br><span class="line">donate: true</span><br><span class="line">#打赏文案</span><br><span class="line">donate_message: 欣赏此文？求鼓励，求支持！</span><br></pre></td></tr></table></figure></p>
 <p>如果我们要针对某一篇文章关闭打赏功能的话，只需要在该篇文章上添加 donate: false 代码即可。</p>
-<p>大功告成！<br>个人博客：<a href="https://lastsummer.top" target="_blank" rel="noopener">去年夏天</a><br>推荐博客：<a href="http://lastsummer.top/2018/10/25/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD/#more" target="_blank" rel="noopener">Hexo博客添加打赏功能</a><br>参考博客：<a href="http://cighao.com/2016/02/23/add-donate-to-hexo/" target="_blank" rel="noopener">Hexo 博客添加打赏功能</a><br></p>
-        
-          <p class="article-more-link">
-            <a href="/2018/10/25/Hexo博客添加打赏功能/#more">Read More</a>
-          </p>
-        
+<p>大功告成！<br>个人博客：<a href="https://lastsummer.top" target="_blank" rel="noopener">去年夏天</a><br>推荐博客：<a href="http://lastsummer.top/2018/10/25/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD/#more" target="_blank" rel="noopener">Hexo博客添加打赏功能</a><br>参考博客：<a href="http://cighao.com/2016/02/23/add-donate-to-hexo/" target="_blank" rel="noopener">Hexo 博客添加打赏功能</a></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/2018/10/25/Hexo博客添加打赏功能/" data-id="cjnnyjsw7000bjcvbz23r36gt" class="article-share-link-test"></a>
+      <a data-url="http://www.lastsummer.top/2018/10/25/Hexo博客添加打赏功能/" data-id="cjnnymtf10008tsvb71znclkr" class="article-share-link-test"></a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
@@ -230,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/2018/10/23/Hexo博客添加图片音乐及视频/" data-id="cjnnyjsw30008jcvbrbrpnd6o" class="article-share-link-test"></a>
+      <a data-url="http://www.lastsummer.top/2018/10/23/Hexo博客添加图片音乐及视频/" data-id="cjnnymtep0002tsvblf6y9oez" class="article-share-link-test"></a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
@@ -309,7 +332,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/2018/10/19/Hexo-Github搭建个人博客二/" data-id="cjnnyjsvz0004jcvbr96ttyws" class="article-share-link-test"></a>
+      <a data-url="http://www.lastsummer.top/2018/10/19/Hexo-Github搭建个人博客二/" data-id="cjnnymtf5000atsvbn1o1zgaj" class="article-share-link-test"></a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li></ul>
@@ -388,7 +411,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/2018/10/15/Hexo-Github搭建个人博客/" data-id="cjnnyjsvu0002jcvb29uq9myn" class="article-share-link-test"></a>
+      <a data-url="http://www.lastsummer.top/2018/10/15/Hexo-Github搭建个人博客/" data-id="cjnnymteu0004tsvb043dy1pw" class="article-share-link-test"></a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nodejs/">Nodejs</a></li></ul>
@@ -467,7 +490,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/2018/10/11/hello-world/" data-id="cjnnyjsw5000ajcvb108zjive" class="article-share-link-test"></a>
+      <a data-url="http://www.lastsummer.top/2018/10/11/hello-world/" data-id="cjnnymtfa000ctsvbvsauqxzj" class="article-share-link-test"></a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>

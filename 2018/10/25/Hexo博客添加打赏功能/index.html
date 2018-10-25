@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="去年夏天">
 <meta property="og:description" content="基本思路是将微信和支付宝的收款二维码放到每篇文章的最后，打赏的时候扫下二维码就可以了。 以 hexo-theme-shana-master 主题为例： 第一步：编写打赏模块的代码themes\hexo-theme-shana-master\layout\_partial 下新建 donate.ejs 输入如下内容：123456789101112131415161718192021222324252">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-25T02:17:30.010Z">
+<meta property="og:updated_time" content="2018-10-25T02:19:15.860Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客添加打赏功能">
 <meta name="twitter:description" content="基本思路是将微信和支付宝的收款二维码放到每篇文章的最后，打赏的时候扫下二维码就可以了。 以 hexo-theme-shana-master 主题为例： 第一步：编写打赏模块的代码themes\hexo-theme-shana-master\layout\_partial 下新建 donate.ejs 输入如下内容：123456789101112131415161718192021222324252">
@@ -101,7 +101,7 @@
   </div>
 </div>
 
-        <section id="main"><article id="w-Hexo博客添加打赏功能" class="wow slideInRight article article-type-w" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Hexo博客添加打赏功能" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/25/Hexo博客添加打赏功能/" class="article-date">
   <time class="post-time" datetime="2018-10-25T01:31:51.000Z" itemprop="datePublished">
@@ -127,6 +127,16 @@
   <div class="article-category">
     <a class="article-category-link" href="/categories/hexo/">hexo</a>
   </div>
+
+          
+              
+  &nbsp; | &nbsp;
+  <div class="view-box">
+    <span id="/2018/10/25/Hexo博客添加打赏功能/" class="leancloud_visitors" data-flag-title="Hexo博客添加打赏功能">
+      &nbsp;阅读次数<span class="leancloud-visitors-count"></span>
+    </span>
+  </div>
+
 
           
         </div>
@@ -188,12 +198,12 @@
 <h3 id="第三步：-讲打赏模块整合到文章中"><a href="#第三步：-讲打赏模块整合到文章中" class="headerlink" title="第三步： 讲打赏模块整合到文章中"></a>第三步： 讲打赏模块整合到文章中</h3><p>在 <code>themes\hexo-theme-shana-master\layout\_partial\article.ejs</code> 中的 <code>&lt;article&gt; &lt;/article&gt;</code> 标签内添加如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (!index &amp;&amp; theme.donate &amp;&amp; post.donate)&#123; %&gt;</span><br><span class="line">	&lt;%- partial(&apos;donate/donate&apos;) %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure></p>
 <h3 id="第四步：-编写配置文件"><a href="#第四步：-编写配置文件" class="headerlink" title="第四步： 编写配置文件"></a>第四步： 编写配置文件</h3><p>我们在<code>\themes\hexo-theme-shana-master\_config.yml</code>主题文件中关闭和打开打赏功能，还可以自定义设置打赏文案。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#是否开启打赏功能</span><br><span class="line">donate: true</span><br><span class="line">#打赏文案</span><br><span class="line">donate_message: 欣赏此文？求鼓励，求支持！</span><br></pre></td></tr></table></figure></p>
 <p>如果我们要针对某一篇文章关闭打赏功能的话，只需要在该篇文章上添加 donate: false 代码即可。</p>
-<p>大功告成！<br>个人博客：<a href="https://lastsummer.top" target="_blank" rel="noopener">去年夏天</a><br>推荐博客：<a href="http://lastsummer.top/2018/10/25/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD/#more" target="_blank" rel="noopener">Hexo博客添加打赏功能</a><br>参考博客：<a href="http://cighao.com/2016/02/23/add-donate-to-hexo/" target="_blank" rel="noopener">Hexo 博客添加打赏功能</a><br><a id="more"></a></p>
+<p>大功告成！<br>个人博客：<a href="https://lastsummer.top" target="_blank" rel="noopener">去年夏天</a><br>推荐博客：<a href="http://lastsummer.top/2018/10/25/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD/#more" target="_blank" rel="noopener">Hexo博客添加打赏功能</a><br>参考博客：<a href="http://cighao.com/2016/02/23/add-donate-to-hexo/" target="_blank" rel="noopener">Hexo 博客添加打赏功能</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lastsummer.top/2018/10/25/Hexo博客添加打赏功能/" data-id="cjnnyjsw7000bjcvbz23r36gt" class="article-share-link-test"></a>
+      <a data-url="http://www.lastsummer.top/2018/10/25/Hexo博客添加打赏功能/" data-id="cjnnymtf10008tsvb71znclkr" class="article-share-link-test"></a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
