@@ -1,6 +1,6 @@
-https://lastsummer.top/2018/10/26/NexT主题用Leancloud统计文章阅读量/
-https://lastsummer.top/2018/10/25/Hexo博客添加打赏功能/
-https://lastsummer.top/2018/10/23/Hexo博客添加图片音乐及视频/
-https://lastsummer.top/2018/10/19/Hexo-Github搭建个人博客二/
-https://lastsummer.top/2018/10/15/Hexo-Github搭建个人博客/
-https://lastsummer.top/2018/10/11/hello-world/
+https://lastsummer.top/blog/2018/10/26/NexT主题用Leancloud统计文章阅读量/
+https://lastsummer.top/blog/2018/10/25/Hexo博客添加打赏功能/
+https://lastsummer.top/blog/2018/10/23/Hexo博客添加图片音乐及视频/
+https://lastsummer.top/blog/2018/10/19/Hexo-Github搭建个人博客二/
+https://lastsummer.top/blog/2018/10/15/Hexo-Github搭建个人博客/
+https://lastsummer.top/blog/2018/10/11/hello-world/
