@@ -24,7 +24,7 @@ var S = {
     if (i !== -1) {
       S.UI.simulate(decodeURI(action).substring(i + 3));
     } else {
-      S.UI.simulate('welcome to|blog|of|去年夏天|lastsummer|↑↑↑|3|2|1|');
+      S.UI.simulate('welcome to|blog|of|去年夏天|lastsummer|');
     }
 
     S.Drawing.loop(function () {
