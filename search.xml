@@ -1,71 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[NexT主题用Leancloud统计文章阅读量]]></title>
-    <url>%2Fblog%2F2018%2F10%2F26%2FNexT%E4%B8%BB%E9%A2%98%E7%94%A8Leancloud%E7%BB%9F%E8%AE%A1%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%2F</url>
-    <content type="text"><![CDATA[Hexo博客用Leancloud统计文章阅读量，以 hexo-theme-shana-master 主题为例。 第一步：注册LeanCloud账号(GitHub)第二步：LeanCloud应用配置 第三步：Hexo主题配置打开博客根目录/themes/next/下的_config.yml，查找leancloud，填写复制来的App ID和App Key，重新生成、步署博客即可正常统计文章阅读量。12345# leadcloud访问次数统计leancloud_visitors: enable: true app_id: Your AppId app_key: Your AppKey 第四步：域名附赠说明因为AppID以及AppKey是暴露在外的，为了确保只用于我们自己的博客，建议设置Web安全域名，填入自己的博客域名。1.记录文章访问量的唯一标识符是文章的发布日期和文章的标题，因此请确保这两个数值组合的唯一性，如果更改了这两个数值，会造成文章阅读数值的清零重计。 2.初始的文章统计量显示为0。在配置好阅读量统计服务之后，第一次打开博文时，会自动向服务器发送数据，该数据会被记录在对应的应用的Counter表中。 3.修改Counter表中的time字段的数值，可以修改文章的访问量。双击具体的数值，修改之后回车即可保存。 大功告成！个人博客：去年夏天推荐博客：NexT主题用Leancloud统计文章阅读量参考博客：NexT主题下，用Leancloud统计文章阅读量]]></content>
+<search> 
+  
+    
+    <entry>
+      <title>NexT主题用Leancloud统计文章阅读量</title>
+      <link href="/blog/2018/10/26/NexT%E4%B8%BB%E9%A2%98%E7%94%A8Leancloud%E7%BB%9F%E8%AE%A1%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F/"/>
+      <url>/blog/2018/10/26/NexT%E4%B8%BB%E9%A2%98%E7%94%A8Leancloud%E7%BB%9F%E8%AE%A1%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F/</url>
+      
+        <content type="html"><![CDATA[<p>Hexo博客用Leancloud统计文章阅读量，以 hexo-theme-shana-master 主题为例。<br><a id="more"></a></p><h3 id="第一步：注册LeanCloud账号-GitHub"><a href="#第一步：注册LeanCloud账号-GitHub" class="headerlink" title="第一步：注册LeanCloud账号(GitHub)"></a>第一步：注册<a href="https://leancloud.cn/dashboard/login.html#/signin" target="_blank" rel="noopener">LeanCloud</a>账号(GitHub)</h3><h3 id="第二步：LeanCloud应用配置"><a href="#第二步：LeanCloud应用配置" class="headerlink" title="第二步：LeanCloud应用配置"></a>第二步：LeanCloud应用配置</h3><p><img src="/blog/2018/10/26/NexT主题用Leancloud统计文章阅读量/leancloud1.png" alt="创建应用"><br><img src="/blog/2018/10/26/NexT主题用Leancloud统计文章阅读量/leancloud2.png" alt="新应用名称-开发版-创建"><br><img src="/blog/2018/10/26/NexT主题用Leancloud统计文章阅读量/leancloud3.png" alt="点击存储"><br><img src="/blog/2018/10/26/NexT主题用Leancloud统计文章阅读量/leancloud4.png" alt="存储-创建Class-Class名称-无限制-创建Class（等待2分钟初始化）"><br><img src="/blog/2018/10/26/NexT主题用Leancloud统计文章阅读量/leancloud5.png" alt="设置-得到App ID及App Key"></p><h3 id="第三步：Hexo主题配置"><a href="#第三步：Hexo主题配置" class="headerlink" title="第三步：Hexo主题配置"></a>第三步：Hexo主题配置</h3><p>打开博客根目录/themes/next/下的_config.yml，查找leancloud，填写复制来的App ID和App Key，重新生成、步署博客即可正常统计文章阅读量。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># leadcloud访问次数统计</span></span><br><span class="line">leancloud_visitors:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  app_id: Your AppId</span><br><span class="line">  app_key: Your AppKey</span><br></pre></td></tr></table></figure></p><h3 id="第四步：域名附赠说明"><a href="#第四步：域名附赠说明" class="headerlink" title="第四步：域名附赠说明"></a>第四步：域名附赠说明</h3><p>因为AppID以及AppKey是暴露在外的，为了确保只用于我们自己的博客，建议设置Web安全域名，填入自己的博客域名。<br><img src="/blog/2018/10/26/NexT主题用Leancloud统计文章阅读量/leancloud6.png" alt="设置-安全中心-Web安全域名-保存"><br>1.记录文章访问量的唯一标识符是文章的发布日期和文章的标题，因此请确保这两个数值组合的唯一性，如果更改了这两个数值，会造成文章阅读数值的清零重计。</p><p>2.初始的文章统计量显示为0。在配置好阅读量统计服务之后，第一次打开博文时，会自动向服务器发送数据，该数据会被记录在对应的应用的Counter表中。</p><p>3.修改Counter表中的time字段的数值，可以修改文章的访问量。双击具体的数值，修改之后回车即可保存。</p><p>大功告成！<br>个人博客：<a href="https://lastsummer.top">去年夏天</a><br>推荐博客：<a href="http://lastsummer.top/2018/10/26/NexT主题用Leancloud统计文章阅读量">NexT主题用Leancloud统计文章阅读量</a><br>参考博客：<a href="https://blog.csdn.net/weixin_39345384/article/details/80787998" target="_blank" rel="noopener">NexT主题下，用Leancloud统计文章阅读量</a></p>]]></content>
+      
+      
       <categories>
-        <category>hexo</category>
+          
+          <category> hexo </category>
+          
       </categories>
-      <tags>
-        <tag>Leancloud</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hexo博客添加打赏功能]]></title>
-    <url>%2Fblog%2F2018%2F10%2F25%2FHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD%2F</url>
-    <content type="text"><![CDATA[基本思路是将微信和支付宝的收款二维码放到每篇文章的最后，打赏的时候扫下二维码就可以了。以 hexo-theme-shana-master 主题为例： 第一步：编写打赏模块的代码themes\hexo-theme-shana-master\layout\_partial 下新建 donate.ejs 输入如下内容：123456789101112131415161718192021222324252627&lt;! -- 添加捐赠图标 --&gt; &lt;div align='center' style='margin-top:80px;'&gt; &lt;div id='donate_board' class="donate_bar"&gt; &lt;a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏"&gt;&lt;/a&gt; &lt;span class="donate_txt"&gt; &amp;uarr;&lt;br&gt; &lt;%=theme.donate_message%&gt; &lt;/span&gt; &lt;/div&gt; &lt;div id="donate_guide" class="donate_bar hidden" &gt; &lt;!-- 支付宝打赏图案 --&gt; &lt;img src="/photos/donate/zhifubao.jpg" alt="支付宝打赏"&gt; &lt;!-- 微信打赏图案 --&gt; &lt;img src="/photos/donate/weixin.png" alt="微信打赏"&gt; &lt;/div&gt; &lt;script&gt; document.getElementById('btn_donate').onclick = function()&#123; $('#donate_board').addClass('hidden'); $('#donate_guide').removeClass('hidden'); &#125; document.getElementById('donate_guide').onclick = function()&#123; $('#donate_guide').addClass('hidden'); $('#donate_board').removeClass('hidden'); &#125; &lt;/script&gt; &lt;/div&gt;&lt;! -- 添加捐赠图标 --&gt; 第二步： 编写打赏模块的样式themes\hexo-theme-shana-master\source\css\_partial 下新建 donate.styl 输入如下内容：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647.donate_bar &#123; text-align: center; margin-top: 5%&#125;.donate_bar a.btn_donate &#123; display: inline-block; width: 82px; height: 82px; margin-left: auto; margin-right: auto; background: url(http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif)no-repeat; -webkit-transition: background 0s; -moz-transition: background 0s; -o-transition: background 0s; -ms-transition: background 0s; transition: background 0s&#125;.donate_bar a.btn_donate:hover &#123; background-position: 0 -82px&#125;.donate_bar .donate_txt &#123; display: block; color: #9d9d9d; font: 14px/2 "Microsoft Yahei"&#125;.donate_bar.hidden&#123; display: none&#125;.post-donate&#123; margin-top: 80px;&#125;#donate_guide&#123; height: 210px; width: 420px; margin: 0 auto;&#125;#donate_guide img&#123; height: 200px; height: 200px;&#125; 最后，记得在 style.styl 中添加 @import ‘_partial/donate’ 第三步： 讲打赏模块整合到文章中在 themes\hexo-theme-shana-master\layout\_partial\article.ejs 中的 &lt;article&gt; &lt;/article&gt; 标签内添加如下内容：123&lt;% if (!index &amp;&amp; theme.donate &amp;&amp; post.donate)&#123; %&gt; &lt;%- partial(&apos;donate/donate&apos;) %&gt;&lt;% &#125; %&gt; 第四步： 编写配置文件我们在\themes\hexo-theme-shana-master\_config.yml主题文件中关闭和打开打赏功能，还可以自定义设置打赏文案。1234#是否开启打赏功能donate: true#打赏文案donate_message: 欣赏此文？求鼓励，求支持！ 如果我们要针对某一篇文章关闭打赏功能的话，只需要在该篇文章上添加 donate: false 代码即可。 大功告成！个人博客：去年夏天推荐博客：Hexo博客添加打赏功能参考博客：Hexo 博客添加打赏功能]]></content>
+      
+      
+        <tags>
+            
+            <tag> Leancloud </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Hexo博客添加打赏功能</title>
+      <link href="/blog/2018/10/25/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD/"/>
+      <url>/blog/2018/10/25/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD/</url>
+      
+        <content type="html"><![CDATA[<p>基本思路是将微信和支付宝的收款二维码放到每篇文章的最后，打赏的时候扫下二维码就可以了。<br><a id="more"></a><br>以 hexo-theme-shana-master 主题为例：</p><h3 id="第一步：编写打赏模块的代码"><a href="#第一步：编写打赏模块的代码" class="headerlink" title="第一步：编写打赏模块的代码"></a>第一步：编写打赏模块的代码</h3><p><code>themes\hexo-theme-shana-master\layout\_partial</code> 下新建 <code>donate.ejs</code> 输入如下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;! -- 添加捐赠图标 --&gt;</span><br><span class="line">&lt;div align=<span class="string">'center'</span> style=<span class="string">'margin-top:80px;'</span>&gt;</span><br><span class="line">&lt;div id=<span class="string">'donate_board'</span> class=<span class="string">"donate_bar"</span>&gt;</span><br><span class="line">&lt;a id=<span class="string">"btn_donate"</span> class=<span class="string">"btn_donate"</span> href=<span class="string">"javascript:;"</span> title=<span class="string">"打赏"</span>&gt;&lt;/a&gt;</span><br><span class="line">&lt;span class=<span class="string">"donate_txt"</span>&gt;</span><br><span class="line">   &amp;uarr;&lt;br&gt;</span><br><span class="line">   &lt;%=theme.donate_message%&gt;</span><br><span class="line">&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div id=<span class="string">"donate_guide"</span> class=<span class="string">"donate_bar hidden"</span> &gt;</span><br><span class="line">&lt;!-- 支付宝打赏图案 --&gt;</span><br><span class="line">&lt;img src=<span class="string">"/photos/donate/zhifubao.jpg"</span> alt=<span class="string">"支付宝打赏"</span>&gt; </span><br><span class="line">&lt;!-- 微信打赏图案 --&gt;</span><br><span class="line">&lt;img src=<span class="string">"/photos/donate/weixin.png"</span> alt=<span class="string">"微信打赏"</span>&gt;  </span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">document.getElementById(<span class="string">'btn_donate'</span>).onclick = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">$(<span class="string">'#donate_board'</span>).addClass(<span class="string">'hidden'</span>);</span><br><span class="line">$(<span class="string">'#donate_guide'</span>).removeClass(<span class="string">'hidden'</span>);</span><br><span class="line">&#125;</span><br><span class="line">document.getElementById(<span class="string">'donate_guide'</span>).onclick = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">$(<span class="string">'#donate_guide'</span>).addClass(<span class="string">'hidden'</span>);</span><br><span class="line">$(<span class="string">'#donate_board'</span>).removeClass(<span class="string">'hidden'</span>);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;! -- 添加捐赠图标 --&gt;</span><br></pre></td></tr></table></figure></p><h3 id="第二步：-编写打赏模块的样式"><a href="#第二步：-编写打赏模块的样式" class="headerlink" title="第二步： 编写打赏模块的样式"></a>第二步： 编写打赏模块的样式</h3><p><code>themes\hexo-theme-shana-master\source\css\_partial</code> 下新建 <code>donate.styl</code> 输入如下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">.donate_bar &#123;</span><br><span class="line">text-align: center;</span><br><span class="line">margin-top: 5%</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.donate_bar a.btn_donate &#123;</span><br><span class="line">display: inline-block;</span><br><span class="line">width: 82px;</span><br><span class="line">height: 82px;</span><br><span class="line">margin-left: auto;</span><br><span class="line">margin-right: auto;</span><br><span class="line">background: url(http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif)no-repeat;</span><br><span class="line">-webkit-transition: background 0s;</span><br><span class="line">-moz-transition: background 0s;</span><br><span class="line">-o-transition: background 0s;</span><br><span class="line">-ms-transition: background 0s;</span><br><span class="line">transition: background 0s</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.donate_bar a.btn_donate:hover &#123;</span><br><span class="line">background-position: 0 -82px</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.donate_bar .donate_txt &#123;</span><br><span class="line">display: block;</span><br><span class="line">color: <span class="comment">#9d9d9d;</span></span><br><span class="line">font: 14px/2 <span class="string">"Microsoft Yahei"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.donate_bar.hidden&#123;</span><br><span class="line">display: none</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.post-donate&#123;</span><br><span class="line">margin-top: 80px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#donate_guide&#123;</span></span><br><span class="line">height: 210px;</span><br><span class="line">width: 420px;</span><br><span class="line">margin: 0 auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#donate_guide img&#123;</span></span><br><span class="line">height: 200px;</span><br><span class="line">height: 200px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>最后，记得在 <code>style.styl</code> 中添加 @import ‘_partial/donate’</p><h3 id="第三步：-讲打赏模块整合到文章中"><a href="#第三步：-讲打赏模块整合到文章中" class="headerlink" title="第三步： 讲打赏模块整合到文章中"></a>第三步： 讲打赏模块整合到文章中</h3><p>在 <code>themes\hexo-theme-shana-master\layout\_partial\article.ejs</code> 中的 <code>&lt;article&gt; &lt;/article&gt;</code> 标签内添加如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (!index &amp;&amp; theme.donate &amp;&amp; post.donate)&#123; %&gt;</span><br><span class="line">&lt;%- partial(&apos;donate/donate&apos;) %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure></p><h3 id="第四步：-编写配置文件"><a href="#第四步：-编写配置文件" class="headerlink" title="第四步： 编写配置文件"></a>第四步： 编写配置文件</h3><p>我们在<code>\themes\hexo-theme-shana-master\_config.yml</code>主题文件中关闭和打开打赏功能，还可以自定义设置打赏文案。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#是否开启打赏功能</span><br><span class="line">donate: true</span><br><span class="line">#打赏文案</span><br><span class="line">donate_message: 欣赏此文？求鼓励，求支持！</span><br></pre></td></tr></table></figure></p><p>如果我们要针对某一篇文章关闭打赏功能的话，只需要在该篇文章上添加 donate: false 代码即可。</p><p>大功告成！<br>个人博客：<a href="https://lastsummer.top">去年夏天</a><br>推荐博客：<a href="http://lastsummer.top/2018/10/25/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F%E5%8A%9F%E8%83%BD/#more">Hexo博客添加打赏功能</a><br>参考博客：<a href="http://cighao.com/2016/02/23/add-donate-to-hexo/" target="_blank" rel="noopener">Hexo 博客添加打赏功能</a></p>]]></content>
+      
+      
       <categories>
-        <category>hexo</category>
+          
+          <category> hexo </category>
+          
       </categories>
-      <tags>
-        <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hexo博客添加图片音乐及视频]]></title>
-    <url>%2Fblog%2F2018%2F10%2F23%2FHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%E9%9F%B3%E4%B9%90%E5%8F%8A%E8%A7%86%E9%A2%91%2F</url>
-    <content type="text"><![CDATA[Hexo博客添加图片音乐及视频。 插入外部链接图片1![“图片描述”](“图片地址”) 添加本地图片在\hexo\source目录下新建文件夹，命名为images或者其他你喜欢的名字，然后编辑你的md博文，插入下面的代码样式：1![“图片描述”](/images/你的图片名字.JPG) 插入音乐1&lt;iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=660 height=86 src="//music.163.com/outchain/player?type=2&amp;id=1306515028&amp;auto=0&amp;height=66"&gt;&lt;/iframe&gt; 插入视频1&lt;iframe height=498 width=660 src='//player.youku.com/embed/XMzgyNTI5NTY1Mg==' frameborder=0 'allowfullscreen'&gt;&lt;/iframe&gt; 个人博客：去年夏天相关链接: 去年夏天参考博客：hexo博客添加图片，音乐，视频]]></content>
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Hexo博客添加图片音乐及视频</title>
+      <link href="/blog/2018/10/23/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%E9%9F%B3%E4%B9%90%E5%8F%8A%E8%A7%86%E9%A2%91/"/>
+      <url>/blog/2018/10/23/Hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%E9%9F%B3%E4%B9%90%E5%8F%8A%E8%A7%86%E9%A2%91/</url>
+      
+        <content type="html"><![CDATA[<p>Hexo博客添加图片音乐及视频。<br><a id="more"></a></p><h5 id="插入外部链接图片"><a href="#插入外部链接图片" class="headerlink" title="插入外部链接图片"></a>插入外部链接图片</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![“图片描述”](“图片地址”)</span><br></pre></td></tr></table></figure><h5 id="添加本地图片"><a href="#添加本地图片" class="headerlink" title="添加本地图片"></a>添加本地图片</h5><p>在\hexo\source目录下新建文件夹，命名为images或者其他你喜欢的名字，然后编辑你的md博文，插入下面的代码样式：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![“图片描述”](/images/你的图片名字.JPG)</span><br></pre></td></tr></table></figure></p><h5 id="插入音乐"><a href="#插入音乐" class="headerlink" title="插入音乐"></a>插入音乐</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe frameborder=<span class="string">"no"</span> border=<span class="string">"0"</span> marginwidth=<span class="string">"0"</span> marginheight=<span class="string">"0"</span> width=660 height=86 src=<span class="string">"//music.163.com/outchain/player?type=2&amp;id=1306515028&amp;auto=0&amp;height=66"</span>&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="660" height="86" src="//music.163.com/outchain/player?type=2&id=1306515028&auto=0&height=66"></iframe></p><h5 id="插入视频"><a href="#插入视频" class="headerlink" title="插入视频"></a>插入视频</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe height=498 width=660 src=<span class="string">'//player.youku.com/embed/XMzgyNTI5NTY1Mg=='</span> frameborder=0 <span class="string">'allowfullscreen'</span>&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure><p><iframe height="498" width="660" src="//player.youku.com/embed/XMzgyNTI5NTY1Mg==" frameborder="0" 'allowfullscreen'=""></iframe><br>个人博客：<a href="https://lastsummer.top">去年夏天</a><br>相关链接: <a href="https://lastsummer.top/生活">去年夏天</a><br>参考博客：<a href="https://blog.csdn.net/qq_26891045/article/details/51693571" target="_blank" rel="noopener">hexo博客添加图片，音乐，视频</a></p>]]></content>
+      
+      
       <categories>
-        <category>hexo</category>
+          
+          <category> hexo </category>
+          
       </categories>
-      <tags>
-        <tag>html</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hexo-Github搭建个人博客二]]></title>
-    <url>%2Fblog%2F2018%2F10%2F19%2FHexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%2F</url>
-    <content type="text"><![CDATA[本文主要介绍了域名解析绑定及SSH部署博客到Github。 Github绑定域名相关步骤Github注册访问Github官方地址 Github输入用户名、电子邮箱、密码,然后点击注册按钮.–&gt;之后验证邮箱（进入自己邮箱进行验证）在github上面创建项目(借用github服务器)静态网站在git命令框中安装git插件(cnpm install hexo-deployer-git –save)打开Hexo安装目录，编辑_config.yml文件1234deploy: type: git repository: git@github.com:wangrui15034005712/wangrui15034005712.github.io.git branch: master Git使用ssh密钥git支持https和git两种传输协议，github分享链接时会有两种协议可选：我们要想生成SSH key，首先就得先安装 SSH，对于 Linux 和 Mac 系统，其默认是安装 SSH 的，而对于 Windows 系统，其默认是不安装 SSH 的，不过由于我们安装了 Git Bash，其也应该自带了 SSH. 可以通过在 Git Bash 中输入ssh命令，查看本机是否安装 SSH：初次使用git的用户要使用git协议大概需要三个步骤：一、生成密钥对二、设置远程仓库（本文以github为例）上的公钥三、把git的 remote url 修改为git协议（以上两个步骤初次设置过以后，以后使用都不需要再次设置，此步骤视以后项目的remote url而定，如果以后其他项目的协议为https则需要此步骤）打开Hexo安装目录，右键git bash here点击打开你的id_rsa.pub文件，复制下里面的内容，然后登录进去你的github；至此，Github步骤结束。 域名购买解析国内可以去几个大型的域名商去购买即可，直接搜域名购买，搜索引擎前几的都可以(万网、百度云、腾讯云、新网、西部数码、阿里云)，如果国外的可以去godday、name等站点去购买访问阿里云官方地址 阿里云输入会员名、手机号、密码,然后点击注册按钮.–&gt;之后验证手机(可通过淘宝或者支付宝进行登陆)至此，域名解析步骤结束，我们可以通过自己的域名进行访问了。]]></content>
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Hexo-Github搭建个人博客二</title>
+      <link href="/blog/2018/10/19/Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C/"/>
+      <url>/blog/2018/10/19/Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C/</url>
+      
+        <content type="html"><![CDATA[<p>本文主要介绍了域名解析绑定及SSH部署博客到Github。<br><a id="more"></a></p><h2 id="Github绑定域名相关步骤"><a href="#Github绑定域名相关步骤" class="headerlink" title="Github绑定域名相关步骤"></a>Github绑定域名相关步骤</h2><h3 id="Github注册"><a href="#Github注册" class="headerlink" title="Github注册"></a>Github注册</h3><p>访问Github官方地址 <a href="https://github.com/" target="_blank" rel="noopener">Github</a><br>输入用户名、电子邮箱、密码,然后点击注册按钮.–&gt;之后验证邮箱（进入自己邮箱进行验证）<br>在github上面创建项目(借用github服务器)静态网站<br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/github1.png" alt="注册"><br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/github2.png" alt=""><br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/github5.png" alt="创建仓库"><br>在git命令框中安装git插件(cnpm install hexo-deployer-git –save)<br>打开Hexo安装目录，编辑_config.yml文件<br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/github4.png" alt=""><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:wangrui15034005712/wangrui15034005712.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p><h3 id="Git使用ssh密钥"><a href="#Git使用ssh密钥" class="headerlink" title="Git使用ssh密钥"></a>Git使用ssh密钥</h3><p>git支持https和git两种传输协议，github分享链接时会有两种协议可选：<br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/ssh00.png" alt="https图例"><br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/ssh.png" alt="ssh图例"><br>我们要想生成SSH key，首先就得先安装 SSH，对于 Linux 和 Mac 系统，其默认是安装 SSH 的，而对于 Windows 系统，其默认是不安装 SSH 的，不过由于我们安装了 Git Bash，其也应该自带了 SSH. 可以通过在 Git Bash 中输入ssh命令，查看本机是否安装 SSH：<br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/ssh0.png" alt="查看是否安装ssh"><br>初次使用git的用户要使用git协议大概需要三个步骤：<br>一、生成密钥对<br>二、设置远程仓库（本文以github为例）上的公钥<br>三、把git的 remote url 修改为git协议（以上两个步骤初次设置过以后，以后使用都不需要再次设置，此步骤视以后项目的remote url而定，如果以后其他项目的协议为https则需要此步骤）<br>打开Hexo安装目录，右键git bash here点击<br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/ssh1.png" alt="输入cd ~/.ssh回车-看你是否有了ssh key 密钥，有了就备份"><br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/ssh2.png" alt="生成密钥"><br>打开你的id_rsa.pub文件，复制下里面的内容，然后登录进去你的github；<br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/github6.png" alt="点击settings"><br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/github7.png" alt="点击SSH and GPG keys-New SSH key"><br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/github8.png" alt="把之前复制的公钥输入key-And SSH key"><br>至此，Github步骤结束。</p><h3 id="域名购买解析"><a href="#域名购买解析" class="headerlink" title="域名购买解析"></a>域名购买解析</h3><p>国内可以去几个大型的域名商去购买即可，直接搜域名购买，搜索引擎前几的都可以(万网、百度云、腾讯云、新网、西部数码、阿里云)，如果国外的可以去godday、name等站点去购买<br>访问阿里云官方地址 <a href="https://wanwang.aliyun.com/" target="_blank" rel="noopener">阿里云</a><br>输入会员名、手机号、密码,然后点击注册按钮.–&gt;之后验证手机(可通过淘宝或者支付宝进行登陆)<br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/aliyun1.png" alt="登录成功后-点击产品-企业应用-域名注册"><br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/aliyun2.png" alt="输入自己喜欢的域名点击查询-加入清单-立即结算"><br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/aliyun3.png" alt="选择年限-其他服务不需要勾选-域名持有者按需配置-点击创建信息模板"><br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/aliyun6.png" alt="点击立即购买"><br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/aliyun7.png" alt="进入域名控制台-点击解析"><br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/aliyun8.png" alt="点击新手引导"><br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/ping1.png" alt="打开dos-ping 用户名.github.io-得到Github服务器IP"><br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/aliyun9.png" alt="点击确定"><br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/github9.png" alt="登陆github-点击username.github.io-找到settings"><br><img src="/blog/2018/10/19/Hexo-Github搭建个人博客二/github10.png" alt="找到GitHub Pages-Custom domain-把自己的域名绑定并保存"><br>至此，域名解析步骤结束，我们可以通过自己的域名进行访问了。</p>]]></content>
+      
+      
       <categories>
-        <category>hexo</category>
+          
+          <category> hexo </category>
+          
       </categories>
-      <tags>
-        <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hexo-Github搭建个人博客]]></title>
-    <url>%2Fblog%2F2018%2F10%2F15%2FHexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[首先呢，先说一下吧，这是本人第一次写博客，也是在大学生时代的一个想法，现在终于实现了。花了几天的时间，研究了一下，颇有收获，而我在找资料的过程中，都是这个博客找点那个博客找点，都没有一个博客的教程是很详细且到位的，哎，醉了，感谢你们一直看到这里听我在这里碎碎念，最后啰嗦一句，有什么问题，及时下方评论(不是私信)，因为我几乎每天登陆博客，所以看到后会及时回复大家的。环境配置： 电脑系统为window 10专业版，64位，Nodejs, Github, Hexo, livere, Leancloud, ShareSDK, Dalao。 相关步骤安装Node.js和配置好Node.js环境,我的版本10.11.01、访问官方地址 https://nodejs.org/en/download/ 根据自己的系统进行下载。2、检测是否安装成功：点击开始-运行-cmd（win+R），打开dos，输入“node –version”检查Nodejs版本；输入“npm –version”检查npm版本：3、这里我们要分两步，第一步修改NPM的缓存目录和全局目录路径，将对应的模块目录改到D盘nodejs的安装目录，第二步是配置npm和nodejs的环境变量，这样nodejs才能正确地调用对应的模块。我们先来做第一步，在nodejs目录下创建两个目录，分别是node_cache和node_global，这是用来放安装过程的缓存文件以及最终的模块配置位置。配置完成后，执行下面这两个命令：npm config set prefix “D:\Program Files (x86)\nodejs\node_global”npm config set cache “D:\Program Files (x86)\nodejs\node_cache”将npm的全局模块目录和缓存目录配置到我们刚才创建的那两个目录：然后我们来配置npm的环境变量和nodejs的环境变量。在计算机图标上点右键，选属性，然后点击高级系统配置，弹出来的新窗口右下角有个环境路径，点击去，就能看到环境路径的配置界面，我们点击新建。然后在弹出来的窗口里，变量名填：NODE_PATH变量值填：D:\Program Files (x86)\nodejs\node_global\node_modules由于npm的镜像是国外的，为了加快下载速度，可以通过国内淘宝镜像来下载，所以采用cnpm，当然也可以不采用cnpm，直接把镜像指向淘宝镜像，接下来我说下这两种方式：(1)直接指定registry为淘宝镜像：npm config set registry https://registry.npm.taobao.org(2)安装cnpm：npm install -g cnpm –registry=https://registry.npm.taobao.org 输入上述命令即可安装，另外要注意的是，安装完后，输入cnpm -v进行检测。至此，node.js安装步骤完毕。 安装Git,我的版本2.14.21、访问官方地址 https://git-scm.com/download/win windows64版本检测是否安装成功：点击开始-运行-cmd（win+R），打开dos，输入“git –version”检查git版本；你需要运行命令来配置你的用户名和邮箱：12git config --global user.name "wangrui"git config --global user.email "150340057121990@163.com" 注意：（引号内请输入你自己设置的名字，和你自己的邮箱）此用户名和邮箱是git提交代码时用来显示你身份和联系方式的，并不是github用户名和邮箱至此，安装git步骤结束。 安装hexo首先在本地磁盘中建立一个Hexo文件夹用于存储本地文件(做本地文件保存以及测试使用)在Hexo文件夹中右键，单击Git Bash Here，git终端开启。由于已经使用了淘宝镜像cnpm，直接使用即可在git命令框中安装Hexo(cnpm install -g hexo)在git命令框中git+hexo模块(cnpm install hexo-server –save)hexo基本命令hexo服务启动 hexo server 简写 hexo shexo删除文件 hexo clean 简写 hexo cleanhexo生成文件 hexo generate 简写 hexo ghexo部署文件 hexo deploy 简写 hexo d浏览器输入http://localhost:4000 按理来说应该会出现本地访问页面注意：访问本地页面的时候hexo server 不可以按ctrl+c停止服务，否则会报404本地测试:至此，安装hexo步骤结束,博客基本搭建完成！随后我会陆续更新自己的博客，评论，打赏，分类，标签，分享，域名绑定，照片墙等等陆续上线！个人博客：去年夏天推荐博客：Hexo-Github域名绑定及SSH密钥配置参考博客：hexo+github搭建个人博客(超详细教程)]]></content>
+      
+      
+        <tags>
+            
+            <tag> Github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Hexo-Github搭建个人博客</title>
+      <link href="/blog/2018/10/15/Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+      <url>/blog/2018/10/15/Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<p>首先呢，先说一下吧，这是本人第一次写博客，也是在大学生时代的一个想法，现在终于实现了。<br>花了几天的时间，研究了一下，颇有收获，而我在找资料的过程中，都是这个博客找点那个博客找点，都没有一个博客的教程是很详细且到位的，哎，醉了，感谢你们一直看到这里听我在这里碎碎念，最后啰嗦一句，有什么问题，及时下方评论(不是私信)，因为我几乎每天登陆博客，所以看到后会及时回复大家的。<br><a id="more"></a><br>环境配置：<br>    电脑系统为window 10专业版，64位，Nodejs, Github, Hexo, livere, Leancloud, ShareSDK, Dalao。</p><h2 id="相关步骤"><a href="#相关步骤" class="headerlink" title="相关步骤"></a>相关步骤</h2><h3 id="安装Node-js和配置好Node-js环境-我的版本10-11-0"><a href="#安装Node-js和配置好Node-js环境-我的版本10-11-0" class="headerlink" title="安装Node.js和配置好Node.js环境,我的版本10.11.0"></a>安装Node.js和配置好Node.js环境,我的版本10.11.0</h3><p>1、访问官方地址 <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a> 根据自己的系统进行下载。<br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/nodejs1.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/nodejs2.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/nodejs3.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/nodejs4.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/nodejs5.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/nodejs6.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/nodejs7.png" alt=""><br>2、检测是否安装成功：点击开始-运行-cmd（win+R），打开dos，输入“node –version”检查Nodejs版本；输入“npm –version”检查npm版本：<br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/nodejs8.png" alt=""><br>3、这里我们要分两步，第一步修改NPM的缓存目录和全局目录路径，将对应的模块目录改到D盘nodejs的安装目录，第二步是配置npm和nodejs的环境变量，这样nodejs才能正确地调用对应的模块。<br>我们先来做第一步，在nodejs目录下创建两个目录，分别是node_cache和node_global，这是用来放安装过程的缓存文件以及最终的模块配置位置。配置完成后，执行下面这两个命令：<br>npm config set prefix “D:\Program Files (x86)\nodejs\node_global”<br>npm config set cache “D:\Program Files (x86)\nodejs\node_cache”<br>将npm的全局模块目录和缓存目录配置到我们刚才创建的那两个目录：<br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/nodejs9.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/nodejs10.png" alt=""><br>然后我们来配置npm的环境变量和nodejs的环境变量。在计算机图标上点右键，选属性，然后点击高级系统配置，弹出来的新窗口右下角有个环境路径，点击去，就能看到环境路径的配置界面，我们点击新建。然后在弹出来的窗口里，变量名填：NODE_PATH<br>变量值填：D:\Program Files (x86)\nodejs\node_global\node_modules<br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/nodejs11.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/nodejs12.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/nodejs13.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/nodejs14.png" alt=""><br>由于npm的镜像是国外的，为了加快下载速度，可以通过国内淘宝镜像来下载，所以采用cnpm，当然也可以不采用cnpm，直接把镜像指向淘宝镜像，接下来我说下这两种方式：<br>(1)直接指定registry为淘宝镜像：npm config set registry <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>(2)安装cnpm：npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a>    输入上述命令即可安装，另外要注意的是，安装完后，输入cnpm -v进行检测。<br>至此，node.js安装步骤完毕。</p><h3 id="安装Git-我的版本2-14-2"><a href="#安装Git-我的版本2-14-2" class="headerlink" title="安装Git,我的版本2.14.2"></a>安装Git,我的版本2.14.2</h3><p>1、访问官方地址 <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a> windows64版本<br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/git1.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/git2.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/git3.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/git4.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/git5.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/git6.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/git7.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/git8.png" alt=""><br>检测是否安装成功：点击开始-运行-cmd（win+R），打开dos，输入“git –version”检查git版本；<br>你需要运行命令来配置你的用户名和邮箱：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"wangrui"</span></span><br><span class="line">git config --global user.email <span class="string">"150340057121990@163.com"</span></span><br></pre></td></tr></table></figure></p><p>注意：（引号内请输入你自己设置的名字，和你自己的邮箱）此用户名和邮箱是git提交代码时用来显示你身份和联系方式的，并不是github用户名和邮箱<br>至此，安装git步骤结束。</p><h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>首先在本地磁盘中建立一个Hexo文件夹用于存储本地文件(做本地文件保存以及测试使用)<br>在Hexo文件夹中右键，单击Git Bash Here，git终端开启。<br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/hexo1.png" alt=""><br>由于已经使用了淘宝镜像cnpm，直接使用即可<br>在git命令框中安装Hexo(cnpm install -g hexo)<br>在git命令框中git+hexo模块(cnpm install hexo-server –save)<br>hexo基本命令<br>hexo服务启动    hexo server        简写    hexo s<br>hexo删除文件    hexo clean        简写    hexo clean<br>hexo生成文件    hexo generate    简写    hexo g<br>hexo部署文件    hexo deploy        简写    hexo d<br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/hexo2.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/hexo3.png" alt=""><br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/hexo4.png" alt=""><br>浏览器输入<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 按理来说应该会出现本地访问页面<br>注意：访问本地页面的时候hexo server 不可以按ctrl+c停止服务，否则会报404<br>本地测试:<br><img src="/blog/2018/10/15/Hexo-Github搭建个人博客/hexo5.png" alt=""><br>至此，安装hexo步骤结束,博客基本搭建完成！<br>随后我会陆续更新自己的博客，评论，打赏，分类，标签，分享，域名绑定，照片墙等等陆续上线！<br>个人博客：<a href="https://lastsummer.top">去年夏天</a><br>推荐博客：<a href="https://lastsummer.top/2018/10/19/Hexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C/">Hexo-Github域名绑定及SSH密钥配置</a><br>参考博客：<a href="https://blog.csdn.net/ainuser/article/details/77609180?utm_source=copy" target="_blank" rel="noopener">hexo+github搭建个人博客(超详细教程)</a></p>]]></content>
+      
+      
       <categories>
-        <category>hexo</category>
+          
+          <category> hexo </category>
+          
       </categories>
-      <tags>
-        <tag>Nodejs</tag>
-        <tag>Git</tag>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2Fblog%2F2018%2F10%2F11%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      
+      
+        <tags>
+            
+            <tag> Nodejs </tag>
+            
+            <tag> Git </tag>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/blog/2018/10/11/hello-world/"/>
+      <url>/blog/2018/10/11/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
       <categories>
-        <category>心情</category>
+          
+          <category> 心情 </category>
+          
       </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> test </tag>
+            
+        </tags>
+      
+    </entry>
+    
+  
+  
 </search>
