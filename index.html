@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="18;url=https://lastsummer.top/blog"> 
+  <meta http-equiv="refresh" content="10000;url=https://lastsummer.top/blog"> 
   <title>去年夏天的blog</title>
 
   <link rel="stylesheet" href="css/normalize.css">
@@ -26,7 +26,7 @@
 </div>
 <canvas class="canvas"></canvas>
 
-<div class="help">!!!</div> 
+<div class="help" id='help'>去年夏天</div> 
 
 <div class="ui">
   <input class="ui-input" type="text" />
@@ -35,7 +35,7 @@
 
 <div class="overlay">
   <div class="tabs">
-    <div class="tabs-labels"><span class="tabs-label">Commands</span><span class="tabs-label">Info</span></div>
+    <div class="tabs-labels"><span class="tabs-label">个人名片</span><span class="tabs-label">Demo</span></div>
 
     <div class="tabs-panels">
 	
@@ -65,7 +65,21 @@
 </div>
 
   <script src="js/index.js"></script>
-
+  <script type="text/javascript">
+    // 两秒后模拟点击
+    setTimeout(function() {
+        // IE
+        if(document.all) {
+            document.getElementById("help").click();
+        }
+        // 其它浏览器
+        else {
+            var e = document.createEvent("MouseEvents");
+            e.initEvent("click", true, true);
+            document.getElementById("help").dispatchEvent(e);
+        }
+    }, 18500);
+  </script>
 </body>
 
 </html>
