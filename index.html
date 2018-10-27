@@ -14,6 +14,11 @@
   <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
   <link rel="icon" href="https://pic.qqtn.com/up/2018-9/15368261867401976.jpg" type="image/x-icon" />
   <link rel="shortcut icon" href="https://pic.qqtn.com/up/2018-9/15368261867401976.jpg" type="image/x-icon" />
+	<script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <script type="text/javascript" src="js/main.js"></script>
 </head>
 
 <body>
@@ -38,18 +43,16 @@
 <center><font style="font-size: 12px;"><div>建议PC端访问效果更佳！</div></font></center>
 <div class="overlay">
   <div class="tabs">
-    <div class="tabs-labels"><span class="tabs-label">个人名片</span><span class="tabs-label">Demo</span></div>
+    <div class="tabs-labels"><span class="tabs-label">个人名片</span><span class="tabs-label">Demo</span><span class="tabs-label" id='gameTab' style='display:none;'>游戏面板</span></div>
 
     <div class="tabs-panels">
 	
 	<div class="tabs-panel ui-details">
         <div class="ui-details-content">
-          <h1>这是我拷贝别人的一个黑科技</h1>
-          <p>
-           你可以输入随意英文观看动态效果 Hello World</p>
-            <p>个人博客 <a href="blog/">https://lastsummer.top/blog</a></p>
-          
-			<br/>
+          <h2>这是我拷贝别人的一个黑科技</h2><br>
+            <p>你可以输入随意英文观看动态效果 Hello World</p><br>
+            <p>个人博客  <a href="blog/">https://lastsummer.top/blog</a></p>
+			<p>游戏面板  <a href="#" onclick='game()'>2048小游戏</a></p>
         </div>
       </div>
 	
@@ -63,6 +66,75 @@
         <li class="commands-item commands-item--gap"><span class="commands-item-title">Animate</span><span class="commands-item-info" data-demo="The time is|#time|#countdown 3|#icon thumbs-up"><span class="commands-item-mode">command1</span>&nbsp;|<span class="commands-item-mode">command2</span></span><span class="commands-item-action">Demo</span></li>
       </ul>
 
+	  <div class="tabs-panel ui-details">
+          
+		  <div class="container">
+    <div class="main">
+        <div class="gameName">2048小游戏</div>
+        <div class="maxScore">最高分：
+            <span id="maxScore">1345612</span>
+        </div>
+        <div class="col-sm-3 col-md-4"></div>
+        <div class="gameBody col-sm-6 col-md-4" id="gameBody">
+            <div class="row">
+                <div class="item emptyItem x0y0" x="0" y="0"></div>
+                <div class="item emptyItem x0y1" x="0" y="1"></div>
+                <div class="item emptyItem x0y2" x="0" y="2"></div>
+                <div class="item emptyItem x0y3" x="0" y="3"></div>
+            </div>
+            <div class="row">
+                <div class="item emptyItem x1y0" x="1" y="0"></div>
+                <div class="item emptyItem x1y1" x="1" y="1"></div>
+                <div class="item emptyItem x1y2" x="1" y="2"></div>
+                <div class="item emptyItem x1y3" x="1" y="3"></div>
+            </div>
+            <div class="row">
+                <div class="item emptyItem x2y0" x="2" y="0"></div>
+                <div class="item emptyItem x2y1" x="2" y="1"></div>
+                <div class="item emptyItem x2y2" x="2" y="2"></div>
+                <div class="item emptyItem x2y3" x="2" y="3"></div>
+            </div>
+            <div class="row">
+                <div class="item emptyItem x3y0" x="3" y="0"></div>
+                <div class="item emptyItem x3y1" x="3" y="1"></div>
+                <div class="item emptyItem x3y2" x="3" y="2"></div>
+                <div class="item emptyItem x3y3" x="3" y="3"></div>
+            </div>
+        </div>
+        <div class="gameRule col-sm-12 col-md-12">请用键盘的方向键进行操作</div>
+        <div class="col-sm-4 col-md-4"></div>
+        <div class="scoreAndRefresh col-sm-6 col-md-6">
+            <div class="gameScore ">得分：<span id="gameScore">0</span> 分</div>
+            <button type="button" class="btn btn-danger refreshBtn">
+                <span class="">刷新</span>
+            </button>
+        </div>
+
+        <div class="modal fade" id="gameOverModal" aria-labelledby="myModalLabel" aria-hidden="true"
+             data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            ×
+                        </button>
+                        <h4 class="modal-tittle" id="myModalLabel">2048小游戏</h4>
+                    </div>
+                    <div class="modal-body">
+                        Game Over!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-danger refreshBtn" onclick="refreshGame()">再玩一次</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+			
+      </div>
+	  
     </div>
   </div>
   <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=0 height=0 src="https://music.163.com/outchain/player?type=2&id=1306515028&auto=1&height=66"></iframe>
@@ -83,6 +155,10 @@
             document.getElementById("help").dispatchEvent(e);
         }
     }, 10500);
+	function game(){
+		$('#gameTab').show();
+		document.getElementById("gameTab").click();
+	}
   </script>
 </body>
 
