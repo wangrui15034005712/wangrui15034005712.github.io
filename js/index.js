@@ -66,8 +66,8 @@ S.Drawing = (function () {
     },
 
     adjustCanvas: function () {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight-150;
+      canvas.width = window.innerWidth-30;
+      canvas.height = window.innerHeight-125;
     },
 
     clearFrame: function () {
