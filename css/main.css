@@ -23,12 +23,12 @@ body {
 }
 
 .main .gameName {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
 }
 
 .main .maxScore {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .main .maxScore span {
@@ -70,20 +70,20 @@ body {
 }
 
 .main .gameRule {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
-    margin-top: 5px;
+    margin-top: 3px;
 }
 
 .main .gameScore {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     margin-top: 0px;
 }
 
 .main .gameScore span {
     color: red;
-    font-size: 30px;
+    font-size: 17px;
 }
 
 .main .scoreAndRefresh {
@@ -95,7 +95,8 @@ body {
 
 .main .scoreAndRefresh .refreshBtn {
     height: 30px;
-    margin-top: 8px;
+    margin-top: 3px;
+	margin-bottom: 3px;
 }
 
 .modal {
