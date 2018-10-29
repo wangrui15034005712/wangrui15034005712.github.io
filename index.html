@@ -23,7 +23,7 @@
 <body>
 
 <div style='margin-top:40px;'>
-<font id='music' style='color:#79a8ae;font-size:13px;float:right;  position: absolute;top: 5px;right: 40px;font-weight:bold;cursor: pointer;'>背景音乐<i class="fa fa-music" aria-hidden="true"></i></font>
+<font id='music' style='color:#79a8ae;font-size:13px;float:right;  position: absolute;top: 5px;right: 40px;cursor: pointer;'>背景音乐<i class="fa fa-volume-up" aria-hidden="true"></i></font>
 	<center>
 	<font color="#FF0080" size=9>
 	<a href="https://lastsummer.top/blog">去年夏天个人网站</a>
@@ -136,7 +136,7 @@
     </div>
   </div>
 </div>
-  <iframe id='bgMusic' frameborder="no" border="0" marginwidth="0" marginheight="0" width=0 height=0 src="https://music.163.com/outchain/player?type=2&id=1306515028&auto=1&height=66"></iframe>
+  <audio id="bgMusic" src="https://lastsummer.top/lastsummer.mp3" autoplay="autoplay" loop="loop"></audio>
   <script src="js/index.js"></script>
   <script type="text/javascript">
     // 两秒后模拟点击
@@ -156,14 +156,19 @@
 		$('#gameTab').show();
 		document.getElementById("gameTab").click();
 	}
-	var bgMusic = document.getElementById("bgMusic");
-	$('#music').click(function(){
-		if($('#bgMusic').attr('src').indexOf("auto=1")>0){//正在播放
-			$('#bgMusic').attr('src','https://music.163.com/outchain/player?type=2&id=1306515028&auto=0&height=66');
-		}else{//已停止
-			$('#bgMusic').attr('src','https://music.163.com/outchain/player?type=2&id=1306515028&auto=1&height=66');
-		}
-	});
+	var music = document.getElementById("bgMusic");
+    $("#music").click(function(){
+		debugger
+        if(music.paused){//检查视频是否已暂停 true 指示音频/视频已暂停。否则为 false。
+            music.play();//开始播放
+			$('font:first').find("i").remove();
+			$('font:first').append('<i class="fa fa-volume-up" aria-hidden="true"></i>');
+        }else{
+            music.pause();//暂停播放
+			$('font:first').find("i").remove();
+			$('font:first').append('<i class="fa fa-volume-off" aria-hidden="true"></i>');
+        }
+    });
   </script>
 </body>
 
