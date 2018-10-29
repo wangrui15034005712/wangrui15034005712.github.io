@@ -2,7 +2,6 @@
 <html>
 
 <head>
-
   <meta charset="UTF-8">
   <meta http-equiv="refresh" content="10000;url=https://lastsummer.top/blog"> 
   <meta name="baidu-site-verification" content="cHqsYC3VKh" /><!--百度-->
@@ -14,15 +13,17 @@
   <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
   <link rel="icon" href="https://pic.qqtn.com/up/2018-9/15368261867401976.jpg" type="image/x-icon" />
   <link rel="shortcut icon" href="https://pic.qqtn.com/up/2018-9/15368261867401976.jpg" type="image/x-icon" />
-	<script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-	<script src="https://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-	<link href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/main.css"/>
-    <script type="text/javascript" src="js/main.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/main.css"/>
+  <script type="text/javascript" src="js/main.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 </head>
-
 <body>
+
 <div style='margin-top:40px;'>
+<font id='music' style='color:#79a8ae;font-size:13px;float:right;  position: absolute;top: 5px;right: 40px;font-weight:bold;cursor: pointer;'>背景音乐<i class="fa fa-music" aria-hidden="true"></i></font>
 	<center>
 	<font color="#FF0080" size=9>
 	<a href="https://lastsummer.top/blog">去年夏天个人网站</a>
@@ -135,7 +136,7 @@
     </div>
   </div>
 </div>
-  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=0 height=0 src="https://music.163.com/outchain/player?type=2&id=1306515028&auto=1&height=66"></iframe>
+  <iframe id='bgMusic' frameborder="no" border="0" marginwidth="0" marginheight="0" width=0 height=0 src="https://music.163.com/outchain/player?type=2&id=1306515028&auto=1&height=66"></iframe>
   <script src="js/index.js"></script>
   <script type="text/javascript">
     // 两秒后模拟点击
@@ -155,6 +156,14 @@
 		$('#gameTab').show();
 		document.getElementById("gameTab").click();
 	}
+	var bgMusic = document.getElementById("bgMusic");
+	$('#music').click(function(){
+		if($('#bgMusic').attr('src').indexOf("auto=1")>0){//正在播放
+			$('#bgMusic').attr('src','https://music.163.com/outchain/player?type=2&id=1306515028&auto=0&height=66');
+		}else{//已停止
+			$('#bgMusic').attr('src','https://music.163.com/outchain/player?type=2&id=1306515028&auto=1&height=66');
+		}
+	});
   </script>
 </body>
 
