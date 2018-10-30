@@ -718,5 +718,8 @@ S.Shape = (function () {
   }
 }());
 
+	function inputClick(){
+		$('.ui-input').val('#countdown');
+	}
 
 S.init();

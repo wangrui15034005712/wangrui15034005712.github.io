@@ -50,10 +50,11 @@
 	<div class="tabs-panel ui-details">
         <div class="ui-details-content">
           <h2>这是我拷贝别人的一个黑科技</h2><br>
-            <p>你可以输入随意英文观看动态效果 Hello World</p><br>
-            <p>个人博客 &nbsp <a href="blog/">https://lastsummer.top/blog</a></p>
-			<p>Github &nbsp&nbsp&nbsp <a href="https://github.com/wangrui15034005712">https://github.com/wangrui15034005712</a></p>
-			<p>游戏面板 &nbsp <a href="#" onclick='game()'>2048小游戏</a></p>
+            <p>你可以输入随意英文观看动态效果 <a style='cursor: pointer;' onclick='inputClick()'>#countdown</a>&nbsp;点击回车！</p><br>
+            <p>个人博客 &nbsp; <a href="https://lastsummer.top/blog">https://lastsummer.top/blog</a></p>
+			<p>Github &nbsp;&nbsp;&nbsp; <a href="https://github.com/wangrui15034005712">https://github.com/wangrui15034005712</a></p>
+			<p>Coding &nbsp;&nbsp;&nbsp; <a href="https://dev.tencent.com/u/wangrui15034005712">https://dev.tencent.com/u/wangrui15034005712</a></p>
+			<p>游戏面板 &nbsp; <a href="#" onclick='game()'>2048小游戏</a></p>
         </div>
       </div>
 	
@@ -158,7 +159,6 @@
 	}
 	var music = document.getElementById("bgMusic");
     $("#music").click(function(){
-		debugger
         if(music.paused){//检查视频是否已暂停 true 指示音频/视频已暂停。否则为 false。
             music.play();//开始播放
 			$('font:first').find("i").remove();
