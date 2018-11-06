@@ -27,8 +27,8 @@
 <div style='margin-top:40px;'>
 <font id='music' style='color:#79a8ae;font-size:13px;float:right;  position: absolute;top: 5px;right: 40px;cursor: pointer;'>背景音乐<i class="fa fa-volume-up" aria-hidden="true"></i></font>
 	<center>
-	<font color="#FF0080" size=9>
-	<a href="https://lastsummer.top/blog">去年夏天个人网站</a>
+	<font color="##428bca" size=9>
+	去年夏天个人网站
 	</font>
 	</center>
 </div>
@@ -37,10 +37,10 @@
 </div>
 <canvas class="canvas"></canvas>
 
-<div class="help" id='help'>去年夏天</div> 
+<div class="help" id='help'>点击此处</div> 
 
 <div class="ui">
-  <input class="ui-input" type="text" />
+  <input class="ui-input" type="text" placeholder="随意输入回车观看动态效果"/>
   <span class="ui-return">↵</span>
 </div>
 <div class="overlay">
@@ -52,7 +52,7 @@
 	<div class="tabs-panel ui-details">
         <div class="ui-details-content">
           <h2>这是我拷贝别人的一个黑科技</h2><br>
-            <p>你可以输入随意英文观看动态效果 <a style='cursor: pointer;' onclick='inputClick()'>#countdown</a>&nbsp;点击回车！</p><br>
+            <p>你可以输入随意英文观看动态效果 <a style='cursor: pointer;text-decoration:none;' onclick='inputClick()'>#countdown</a>&nbsp;点击回车！</p><br>
             <p>个人博客 &nbsp; <a href="https://lastsummer.top/blog">https://lastsummer.top/blog</a></p>
 			<p>Github &nbsp;&nbsp;&nbsp; <a href="https://github.com/wangrui15034005712">https://github.com/wangrui15034005712</a></p>
 			<p>Coding &nbsp;&nbsp;&nbsp; <a href="https://dev.tencent.com/u/wangrui15034005712">https://dev.tencent.com/u/wangrui15034005712</a></p>
@@ -144,17 +144,32 @@
   <script type="text/javascript">
     // 两秒后模拟点击
     setTimeout(function() {
-        // IE
-        if(document.all) {
-            document.getElementById("help").click();
-        }
-        // 其它浏览器
-        else {
-            var e = document.createEvent("MouseEvents");
-            e.initEvent("click", true, true);
-            document.getElementById("help").dispatchEvent(e);
-        }
+		// IE
+		if(document.all) {
+			document.getElementById("help").click();
+		}
+		// 其它浏览器
+		else {
+			var e = document.createEvent("MouseEvents");
+			e.initEvent("click", true, true);
+			document.getElementById("help").dispatchEvent(e);
+		}
+		}
     }, 10500);
+	function IsPC() {
+		var userAgentInfo = navigator.userAgent;
+		var Agents = ["Android", "iPhone",
+					"SymbianOS", "Windows Phone",
+					"iPad", "iPod"];
+		var flag = true;
+		for (var v = 0; v < Agents.length; v++) {
+			if (userAgentInfo.indexOf(Agents[v]) > 0) {
+				flag = false;
+				break;
+			}
+		}
+		return flag;
+	}
 	function game(){
 		$('#gameTab').show();
 		document.getElementById("gameTab").click();
@@ -172,7 +187,20 @@
         }
     });
   </script>
-  
+  <style>
+	input::-webkit-input-placeholder {
+         /* placeholder颜色  */
+         color: #aab2bd;
+         /* placeholder字体大小  */
+         font-size: 15px;
+         /* placeholder位置  */
+         text-align: center;
+     }
+	a:link {color: blue; text-decoration:none;} //未访问：蓝色、无下划线 
+	a:active:{color: red; } //激活：红色 
+	a:visited {color:purple;text-decoration:none;} //已访问：紫色、无下划线 
+	a:hover {color: red; text-decoration:underline;} //鼠标移近：红色、下划线
+  </style>
 </body>
 
 </html>
