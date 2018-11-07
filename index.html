@@ -45,7 +45,7 @@
 </div>
 <div class="overlay">
   <div class="tabs">
-    <div class="tabs-labels"><span class="tabs-label">个人名片</span><span class="tabs-label">Demo</span><span class="tabs-label" id='gameTab' style='display:none;'>游戏面板</span></div>
+    <div class="tabs-labels"><span class="tabs-label">个人名片</span><span class="tabs-label">Demo</span><span class="tabs-label" id='IG'>恭喜IG</span><span class="tabs-label" id='gameTab' style='display:none;'>游戏面板</span></div>
 
     <div class="tabs-panels">
 	
@@ -69,7 +69,9 @@
 
         <li class="commands-item commands-item--gap"><span class="commands-item-title">Animate</span><span class="commands-item-info" data-demo="The time is|#time|#countdown 3|#icon thumbs-up"><span class="commands-item-mode">command1</span>&nbsp;|<span class="commands-item-mode">command2</span></span><span class="commands-item-action">Demo</span></li>
       </ul>
-
+<div class="tabs-panel ui-details">
+	<video id="bgVideo" src="IG夺冠瞬间，翻过这座山，让我们听到了你的故事！ 超清(720P).mp4" controls height=400 width=550></video>
+</div>
 	  <div class="tabs-panel ui-details">
           
 		  <div class="container">
@@ -139,7 +141,7 @@
     </div>
   </div>
 </div>
-  <audio id="bgMusic" src="https://lastsummer.top/lastsummer.mp3" autoplay="autoplay" loop="loop"></audio>
+  <audio id="bgMusic" src="https://lastsummer.top/网络歌手 - 翻过这座山IG加油 (Live).mp3" autoplay="autoplay" loop="loop"></audio>
   <script src="js/index.js"></script>
   <script type="text/javascript">
     // 两秒后模拟点击
@@ -185,6 +187,26 @@
 			$('font:first').append('<i class="fa fa-volume-off" aria-hidden="true"></i>');
         }
     });
+	var Video = document.getElementById("bgVideo");
+	$('#bgVideo').click(function(){
+		if(Video.paused){//检查视频是否已暂停 true 指示音频/视频已暂停。否则为 false。
+			Video.play();
+            music.pause();//开始播放
+			$('font:first').find("i").remove();
+			$('font:first').append('<i class="fa fa-volume-off" aria-hidden="true"></i>');
+        }else{
+            music.play();//暂停播放
+			Video.pause();
+			$('font:first').find("i").remove();
+			$('font:first').append('<i class="fa fa-volume-up" aria-hidden="true"></i>');
+        }
+	});
+	Video.addEventListener("ended",function(){
+         music.play();//暂停播放
+		 $('font:first').find("i").remove();
+		 $('font:first').append('<i class="fa fa-volume-up" aria-hidden="true"></i>');
+    })
+	
   </script>
   <style>
 	input::-webkit-input-placeholder {
