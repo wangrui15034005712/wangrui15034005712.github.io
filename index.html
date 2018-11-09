@@ -141,7 +141,7 @@
     </div>
   </div>
 </div>
-  <audio id="bgMusic" src="https://lastsummer.top/网络歌手 - 翻过这座山IG加油 (Live).mp3" autoplay="autoplay" loop="loop"></audio>
+  <audio id="bgMusic" src="https://lastsummer.top/网络歌手 - 翻过这座山IG加油 (Live).mp3" loop="loop"></audio>
   <script src="js/index.js"></script>
   <script type="text/javascript">
     // 两秒后模拟点击
@@ -176,6 +176,9 @@
 		document.getElementById("gameTab").click();
 	}
 	var music = document.getElementById("bgMusic");
+		music.pause();//暂停播放
+		$('font:first').find("i").remove();
+		$('font:first').append('<i class="fa fa-volume-off" aria-hidden="true"></i>');
     $("#music").click(function(){
         if(music.paused){//检查视频是否已暂停 true 指示音频/视频已暂停。否则为 false。
             music.play();//开始播放
@@ -202,7 +205,9 @@
         }
 	});
 	Video.addEventListener("ended",function(){
-         music.play();//暂停播放
+		setTimeout(function(){ 
+			music.play(); 
+		}, 1000);
 		 $('font:first').find("i").remove();
 		 $('font:first').append('<i class="fa fa-volume-up" aria-hidden="true"></i>');
     })
