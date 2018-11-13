@@ -11,6 +11,9 @@ Disallow: /blog/vendors/
 Disallow: /blog/js/
 Disallow: /blog/css/
 Disallow: /blog/plugin/
+Disallow: /tags/
+Disallow: /2018/
+Disallow: /blog/README.html
 
 Sitemap: https://lastsummer.top/blog/sitemap.xml
 Sitemap: https://lastsummer.top/blog/baidusitemap.xml
