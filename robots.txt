@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /blog/
+Allow: /blog/categories/
+Allow: /blog/tags/
+Allow: /blog/archives/
+Allow: /blog/about/
+Allow: /blog/photos/
+Allow: /blog/reward/
+Allow: /blog/生活/
+Disallow: /blog/vendors/
+Disallow: /blog/js/
+Disallow: /blog/css/
+Disallow: /blog/plugin/
+
+Sitemap: https://lastsummer.top/blog/sitemap.xml
+Sitemap: https://lastsummer.top/blog/baidusitemap.xml
