@@ -30,7 +30,7 @@ a:hover {
 
 body,
 .overlay {
-  -webkit-perspective: 1000;
+  -webkit-perspective: 50000;
   -webkit-perspective-origin-y: 25%;
 }
 
@@ -146,10 +146,10 @@ body,
 
 .overlay {
   position: absolute;
-  top: 50%;
+  top: 57%;
   left: 50%;
-  width: 550px;
-  height: 490px;
+  width: 560px;
+  height: 500px;
   margin: -260px 0 0 -275px;
   opacity: 0;
 
@@ -291,7 +291,7 @@ body,
   color: #333;
   opacity: .5;
   cursor: pointer;
-  margin-right: 2px;
+  margin-right: 3px;
 
   -webkit-transition: opacity 0.1s cubic-bezier(0.694, 0.0482, 0.335, 1);
   -moz-transition: opacity 0.1s cubic-bezier(0.694, 0.0482, 0.335, 1);
