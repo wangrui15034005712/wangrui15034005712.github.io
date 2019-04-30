@@ -1,0 +1,102 @@
+<footer id="footer" style='border:none;color:#ffffff;background:none;'>
+  <% if (theme.sidebar === 'bottom'){ %>
+    <%- partial('_partial/sidebar') %>
+  <% } %>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;<%= date(new Date(), 'YYYY-MM-DD dd') %> <%= config.author || config.title %><br>
+      个人专属 | 
+      <a href="https://wangrui15034005712.github.io">博客-Wang Rui</a>
+      <% if (theme.CNZZ){ %>
+        |<script src="http://s11.cnzz.com/z_stat.php?id=<%= theme.CNZZ %>&web_id=<%= theme.CNZZ %>" language="JavaScript"></script>
+      <% } %>
+	  <br>
+	  <span id="timeDate" style="align:center;">载入天数...</span><span id="times">载入时分秒...</span><br>
+	  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	      </script>
+      <span id="busuanzi_container_site_pv">
+		本站总访问量<span id="busuanzi_value_site_pv"></span>次
+	  </span>
+		  <span id="busuanzi_container_site_uv">
+	  总访客数<span id="busuanzi_value_site_uv"></span>人次
+	  </span>
+	</div>
+  </div>
+    <script>
+        var now = new Date(); 
+        function createtime() { 
+            var grt= new Date("10/11/2018 16:47:00");//此处修改你的建站时间或者网站上线时间 
+            now.setTime(now.getTime()+250); 
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+            document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+        } 
+    setInterval("createtime()",250);
+    </script>
+</footer>
+<style>
+body {
+  position:relative;
+}
+.gongyong a {
+  width:50px;
+  height:50px;
+  background:#fff;
+  color:#000;
+  position:fixed;
+  text-align:center;
+  line-height:50px;
+  right:2%;
+  text-decoration:none;
+  transition:all 0.5s;
+  display:none;
+}
+.top a {
+  top:70%;
+}
+.bottom a {
+  top:80%;
+}
+.gongyong a.hover {
+  background:#e14da0;
+}
+</style>
+<div class="top gongyong">
+    <a href="javascript:void(0);">顶部</a>
+</div>
+<div class="bottom gongyong">
+    <a href="javascript:void(0);">底部</a>
+</div>
+
+
+<script>
+$(function() {
+    $(window).scroll(function() {
+        if ($(window).scrollTop() >= 300) {
+            $('.gongyong a').fadeIn(600);
+        } else {
+            $('.gongyong a').fadeOut(600);
+        }
+    });
+    $('.gongyong a').hover(function() {
+        $(this).addClass('hover');
+    }, function() {
+        $(this).removeClass('hover');
+    });
+    $('.top a').click(function() {
+        $("html,body").animate({
+            scrollTop: 0
+        }, 500);
+    });
+    $('.bottom a').click(function() {
+        $("html,body").animate({
+            scrollTop: $(document).height()
+        }, 500);
+    });
+});
+</script>

@@ -1,0 +1,189 @@
+<div class="widget-wrap" style='width:225px;'>
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="<%= theme.avatar%>">
+    <h2 class="author"><%= config.author %></h2>
+    <h3 class="description"><%= config.description %></h3>
+    <div class="count-box">
+      <a href="/blog/archives"><div><strong><%= site.posts.length %></strong><br>文章</div></a>
+      <a href="/blog/categories"><div><strong><%= site.categories.length %></strong><br>分类</div></a>
+      <a href="/blog/tags"><div><strong><%= site.tags.length %></strong><br>标签</div></a>
+    </div>
+	<div id="site_search" align='center' style="margin:15px 0 0 0;">
+	  <input type="text" id="local-search-input" name="q" results="0" placeholder="本站搜索" style='width:180px;height:25px;'/>
+	  <div id="local-search-result"></div>
+	</div>
+    <div align='center' style="margin:15px 0 0 0;">
+      <input type="text"id='guge' name="guge" results="0" placeholder="谷歌搜索" style='width:180px;height:25px;'/>
+    </div>
+	<div align='center' style="margin:15px 0 0 0;">
+      <i class="fa fa-rss fa-2x" aria-hidden="true" id='rss'></i>
+    </div>
+    
+    <% if (theme.socialenable){ %>
+    <div class="friend-link">
+      <h2><%= theme.social_link_title %></h2>
+      <% for (let item of theme.social){ %>
+        <a class="hvr-bounce-in" href="<%= item.url %>" target="_blank" title="<%= item.name %>">
+          <%= item.name %>
+        </a>
+      <% } %>
+    </div>
+    <% } %>
+
+    <div class="friend-link">
+      <h2><%= theme.link_title %></h2>
+      <% for (let item in theme.links){ %>
+        <a class="hvr-bounce-in" href="<%= theme.links[item] %>" target="_blank" title="<%= item %>">
+          <%= item %>
+        </a>
+      <% } %>
+    </div>
+
+    <div class="friend-link">
+        <h2>音乐鉴赏</h2>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=200 height=86 src="//music.163.com/outchain/player?type=2&id=1306515028&auto=0&height=66"></iframe>
+    </div>
+  </div>
+</div>
+
+<% if (site.posts.length){ %>
+  <div class="widget tag" >
+    <h2><font style='font-size: 15px;font-weight: bold;padding: 10px 0px;'>归档</font></h2>
+	<div style='margin-top:6px;'></div>
+    <%- list_archives({format: "YYYY年MM月"}) %>
+  </div>
+<% } %>
+
+<div class="widget-wrap" style='width:225px;'>
+  <div class="widget">
+    <h2><font style='font-size: 15px;font-weight: bold;padding: 10px 0px;'>最新文章</font></h2>
+    <div class="tag-link" id='taglink'>
+
+    </div>
+  </div>
+</div>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+<style>
+  .tag-link{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
+    white-space:nowrap;
+    width:100%;
+  }
+</style>
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var string1 = "";
+            var count = 0;
+             datas.forEach(function(data) {
+               count++;
+               var title = data.title;
+               if(count <= 20){
+                var url = 'https://lastsummer.top/' + data.url;
+                 string1 += "<span><a title='"+title+"' href='"+  url +"'>"+ title +"</a></span><br>";
+               }
+             });
+             $('#taglink').html(string1);
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length <= 0) {
+                    return;
+                }
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    data_url = 'https://lastsummer.top/' + data_url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 100;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substr(start, end); 
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<em class=\"search-keyword\">"+keyword+"</em>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                });
+                str += "</ul>";
+                $resultContent.innerHTML = str;
+            });
+        }
+    });
+}
+
+	var search_path = "<%= config.search.searchpath %>";
+     if (search_path.length == 0) {
+     	search_path = "search.xml";
+     }
+     var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+	 
+	 $('#guge').blur(function () {
+            window.open("https://www.google.com.hk/search?q=site%3Alastsummer.top");
+        });
+	 $('#rss').click(function () {	
+		window.open("https://lastsummer.top/blog/atom.xml");
+	 });
+</script>

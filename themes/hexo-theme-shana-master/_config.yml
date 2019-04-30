@@ -1,0 +1,141 @@
+# Header
+menu:
+  Home: /blog
+  Archives: /blog/archives
+  Categories: /blog/categories
+  Tags: /blog/tags
+  关于: /blog/about
+  相册: /blog/photos
+  生活: /blog/生活
+  文件: /blog/reward
+rss: /atom.xml
+
+# Content
+excerpt_link: Read More
+fancybox: true
+
+# Sidebar
+sidebar: left
+widgets:
+- nav
+- about
+
+# display widgets at the bottom of index pages (pagination == 2)
+index_widgets:
+# - category
+# - tagcloud
+# - archive
+
+# widget behavior
+archive_type: 'monthly'
+show_count: true
+
+# Miscellaneous
+google_analytics:
+favicon: https://pic.qqtn.com/up/2018-9/15368261867401976.jpg
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:
+
+pass: true
+password: admin
+
+# GalMenu - PC端右键调出，移动端长按
+# galmenu决定是否开启
+# mp3play决定是否开启音效
+galmenu: true
+mp3play: true
+gaymenu_item:
+- name: 首页
+  url : /
+- name: 标签
+  url : /tags
+- name: 分类
+  url : /categories
+- name: 归档
+  url : /archives
+- name: 关于
+  url : /about
+- name: 相册
+  url : /photos
+
+# 社交链接
+socialenable: true
+social_link_title: 社交链接
+social:
+- url: https://github.com/wangrui15034005712
+  name: Github
+- url: https://dev.tencent.com/u/wangrui15034005712
+  name: Coding
+
+# 友情链接
+# name : url
+link_title: 友情链接
+links:
+  LastSummer: http://lastsummer.top/
+  ShanaMaid: http://blog.shanamaid.top/
+
+# Sidebar Avatar
+# in theme directory(source/images): /images/avatar.jpg
+# in site  directory(source/uploads): /uploads/avatar.jpg
+# 头像
+avatar: https://pic.qqtn.com/up/2018-9/15368261867401976.jpg
+
+
+# 网站统计
+# 站长统计 填写id
+# eg:　
+# CNZZ: 123456789
+CNZZ: 
+
+# 评论
+# 友言uid
+#uyan: 
+
+#Share
+sharesdk: true
+shareSDKappkey: 283bca7b96411
+
+#来必力
+livere:
+   on: false
+   livere_uid: MTAyMC80MDI3MC8xNjc5Nw==
+
+#畅言
+changyan:
+   on: true
+   appid: cytRJBBqd
+   appkey: 6c62cf127e7cfd66a7c253c93daeda6e
+
+#reward
+reward: true
+   
+#是否开启打赏功能
+donate: false
+#打赏文案
+donate_message: 欣赏此文？求鼓励，求支持！
+   
+# leadcloud访问次数统计
+# 
+leancloud_visitors:
+  enable: true
+  app_id: DuYpeY6f1On4Wk78t8VpuhkQ-gzGzoHsz
+  app_key: udjkMETY7r4RNMLz00VLmsez
+  
+# Automatically Excerpt. Not recommand.
+# Please use <!-- more --> in the post to control excerpt accurately.
+auto_excerpt:
+  enable: true
+  length: 150
+  
+valine:
+  enable: true
+  appid: DuYpeY6f1On4Wk78t8VpuhkQ-gzGzoHsz
+  appkey: udjkMETY7r4RNMLz00VLmsez
+  notify: false
+  verify: false
+  placeholder: ヾﾉ≧∀≦)o 来呀！快活呀！~
+  avatar: mm
+  guest_info: nick,email,link
+  pageSize: 10
