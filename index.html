@@ -28,7 +28,7 @@
 <font id='music' style='color:#79a8ae;font-size:13px;float:right;  position: absolute;top: 9px;right: 40px;cursor: pointer;'>背景音乐<i class="fa fa-volume-up" aria-hidden="true"></i></font>
 	<center>
 	<font color="##428bca" size=9>
-	去年夏天个人网站
+	去年夏天
 	</font>
 	</center>
 </div>
@@ -45,24 +45,32 @@
 </div>
 <div class="overlay">
   <div class="tabs">
-    <div class="tabs-labels"><span class="tabs-label">个人名片</span><span class="tabs-label">Demo</span><span class="tabs-label" id='IG'>恭喜IG</span><span class="tabs-label" id='gameTab' style='display:none;'>游戏面板</span></div>
-
+    <div class="tabs-labels">
+		<span class="tabs-label">个人名片</span>
+		<span class="tabs-label">Demo</span>
+		<span class="tabs-label" id='IG'>恭喜IG</span>
+		<span class="tabs-label" id='gameTab' style='display:none;'>游戏面板</span>
+	</div>
     <div class="tabs-panels">
 	
 	<div class="tabs-panel ui-details">
         <div class="ui-details-content">
 			<center>
-				<h3><b>做自己爱做的事 爱自己在做的事</b></h3>
+				<h3><b><font style='align:center;text-align:center;'>做自己爱做的事 爱自己在做的事</font></b></h3>
 			</center>
 			<br>
 			<img src="./1.png" title="Blog" alt="Blog" width='90' style='margin:9px;cursor:pointer;'onclick='window.open("https://lastsummer.top/blog")'/>
 			<img src="./2.png" title="Github" alt="Github" width='90' style='margin:9px;cursor:pointer;' onclick='window.open("https://github.com/wangrui15034005712")'/>
 			<img src="./3.png" title="Coding" alt="Coding" width='90' style='margin:9px;cursor:pointer;' onclick='window.open("https://dev.tencent.com/u/wangrui15034005712")'/>
-			<img src="./4.png" title="Game" alt="Game" width='90' style='margin:9px;cursor:pointer;' onclick='game()'/>        
+			<img src="./4.png" title="Game" alt="Game" width='90' style='margin:9px;cursor:pointer;' onclick='game()'/>
+			<br>
+			<center>
+				<font style='align:center;text-align:center;'>背景音乐是第一次翻唱的作品，喜欢的朋友多多评论</font>
+			</center>
 		</div>
-      </div>
+    </div>
 	
-      <ul class="tabs-panel commands">
+    <ul class="tabs-panel commands">
         <li class="commands-item"><span class="commands-item-title">Text</span><span class="commands-item-info" data-demo="Hello :)">Type anything</span><span class="commands-item-action">Demo</span></li>
         <li class="commands-item"><span class="commands-item-title">Countdown</span><span class="commands-item-info" data-demo="#countdown 10">#countdown<span class="commands-item-mode">number</span></span><span class="commands-item-action">Demo</span></li>
         <li class="commands-item"><span class="commands-item-title">Time</span><span class="commands-item-info" data-demo="#time">#time</span><span class="commands-item-action">Demo</span></li>
@@ -70,80 +78,80 @@
         <li class="commands-item"><span class="commands-item-title">Circle</span><span class="commands-item-info" data-demo="#circle 25">#circle<span class="commands-item-mode">diameter</span></span><span class="commands-item-action">Demo</span></li>
 
         <li class="commands-item commands-item--gap"><span class="commands-item-title">Animate</span><span class="commands-item-info" data-demo="The time is|#time|#countdown 3|#icon thumbs-up"><span class="commands-item-mode">command1</span>&nbsp;|<span class="commands-item-mode">command2</span></span><span class="commands-item-action">Demo</span></li>
-      </ul>
-<div class="tabs-panel ui-details">
-	<video id="bgVideo" src="IG夺冠瞬间，翻过这座山，让我们听到了你的故事！ 超清(720P).mp4" controls height=400 width=550></video>
-</div>
-	  <div class="tabs-panel ui-details">
-          
-		  <div class="container">
-    <div class="main">
-        <div class="gameName">2048小游戏</div>
-        <div class="maxScore">最高分：
-            <span id="maxScore">1345612</span>
-        </div>
-        <div class="col-sm-3 col-md-4"></div>
-        <div class="gameBody col-sm-6 col-md-4" id="gameBody">
-            <div class="row">
-                <div class="item emptyItem x0y0" x="0" y="0"></div>
-                <div class="item emptyItem x0y1" x="0" y="1"></div>
-                <div class="item emptyItem x0y2" x="0" y="2"></div>
-                <div class="item emptyItem x0y3" x="0" y="3"></div>
-            </div>
-            <div class="row">
-                <div class="item emptyItem x1y0" x="1" y="0"></div>
-                <div class="item emptyItem x1y1" x="1" y="1"></div>
-                <div class="item emptyItem x1y2" x="1" y="2"></div>
-                <div class="item emptyItem x1y3" x="1" y="3"></div>
-            </div>
-            <div class="row">
-                <div class="item emptyItem x2y0" x="2" y="0"></div>
-                <div class="item emptyItem x2y1" x="2" y="1"></div>
-                <div class="item emptyItem x2y2" x="2" y="2"></div>
-                <div class="item emptyItem x2y3" x="2" y="3"></div>
-            </div>
-            <div class="row">
-                <div class="item emptyItem x3y0" x="3" y="0"></div>
-                <div class="item emptyItem x3y1" x="3" y="1"></div>
-                <div class="item emptyItem x3y2" x="3" y="2"></div>
-                <div class="item emptyItem x3y3" x="3" y="3"></div>
-            </div>
-        </div>
-        <div class="gameRule col-sm-12 col-md-12">请用键盘的方向键或手指滑动进行操作</div>
-        <div class="col-sm-4 col-md-4"></div>
-        <div class="scoreAndRefresh col-sm-6 col-md-6">
-            <div class="gameScore ">得分：<span id="gameScore">0</span> 分</div>
-            <button type="button" class="btn btn-danger refreshBtn">
-                <span class="">刷新</span>
-            </button>
-        </div>
+    </ul>
+	<div class="tabs-panel ui-details">
+		<video id="bgVideo" src="IG夺冠瞬间，翻过这座山，让我们听到了你的故事！ 超清(720P).mp4" controls height=400 width=550></video>
+	</div>
+	<div class="tabs-panel ui-details">  
+		<div class="container">
+			<div class="main">
+				<div class="gameName">2048小游戏</div>
+				<div class="maxScore">最高分：
+					<span id="maxScore">1345612</span>
+				</div>
+				<div class="col-sm-3 col-md-4"></div>
+				<div class="gameBody col-sm-6 col-md-4" id="gameBody">
+					<div class="row">
+						<div class="item emptyItem x0y0" x="0" y="0"></div>
+						<div class="item emptyItem x0y1" x="0" y="1"></div>
+						<div class="item emptyItem x0y2" x="0" y="2"></div>
+						<div class="item emptyItem x0y3" x="0" y="3"></div>
+					</div>
+					<div class="row">
+						<div class="item emptyItem x1y0" x="1" y="0"></div>
+						<div class="item emptyItem x1y1" x="1" y="1"></div>
+						<div class="item emptyItem x1y2" x="1" y="2"></div>
+						<div class="item emptyItem x1y3" x="1" y="3"></div>
+					</div>
+					<div class="row">
+						<div class="item emptyItem x2y0" x="2" y="0"></div>
+						<div class="item emptyItem x2y1" x="2" y="1"></div>
+						<div class="item emptyItem x2y2" x="2" y="2"></div>
+						<div class="item emptyItem x2y3" x="2" y="3"></div>
+					</div>
+					<div class="row">
+						<div class="item emptyItem x3y0" x="3" y="0"></div>
+						<div class="item emptyItem x3y1" x="3" y="1"></div>
+						<div class="item emptyItem x3y2" x="3" y="2"></div>
+						<div class="item emptyItem x3y3" x="3" y="3"></div>
+					</div>
+				</div>
+				<div class="gameRule col-sm-12 col-md-12">请用键盘的方向键或手指滑动进行操作</div>
+				<div class="col-sm-4 col-md-4"></div>
+				<div class="scoreAndRefresh col-sm-6 col-md-6">
+					<div class="gameScore ">得分：<span id="gameScore">0</span> 分</div>
+					<button type="button" class="btn btn-danger refreshBtn">
+						<span class="">刷新</span>
+					</button>
+				</div>
 
-        <div class="modal fade" id="gameOverModal" aria-labelledby="myModalLabel" aria-hidden="true"
-             data-backdrop="static">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-tittle" id="myModalLabel">2048小游戏</h4>
-                    </div>
-                    <div class="modal-body">
-                        Game Over!
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
-                        <button type="button" class="btn btn-danger refreshBtn" onclick="refreshGame()">再玩一次</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-			
+				<div class="modal fade" id="gameOverModal" aria-labelledby="myModalLabel" aria-hidden="true"
+					 data-backdrop="static">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-tittle" id="myModalLabel">2048小游戏</h4>
+							</div>
+							<div class="modal-body">
+								Game Over!
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+								<button type="button" class="btn btn-danger refreshBtn" onclick="refreshGame()">再玩一次</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
       </div>
-	  
     </div>
   </div>
 </div>
-  <audio id="bgMusic" src="网络歌手 - 翻过这座山IG加油 (Live).mp3" loop="loop"></audio>
+<!--
+	<audio id="bgMusic" src="lastsummer.mp3" loop="loop"></audio>
+-->
+  <audio id="bgMusic" src="去年夏天-中质量.mp3" loop="loop"></audio>
   <script src="js/index.js"></script>
   <script type="text/javascript">
     // 两秒后模拟点击
